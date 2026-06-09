@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - TrekNepal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <nav class="topbar">
+    <div class="brand">TrekNepal</div>
+    <ul class="menu-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="routes.html">Routes</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="compare.html">Compare</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="menu-auth">
+      <a href="login.html" class="btn-action btn-faint btn-small">Sign In</a>
+      <a href="signup.html" class="btn-action btn-main btn-small active">Sign Up</a>
+    </div>
+    <button class="menu-toggle">Menu</button>
+  </nav>
+  <div class="auth-page">
+    <div class="auth-box" style="max-width:480px;">
+      <div class="auth-logo">TrekNepal</div>
+      <h1 class="auth-title">Create your TrekNepal account</h1>
+      <p class="auth-sub">Already signed up? <a href="login.html">Sign in instead</a></p>
+      <div class="steps">
+        <div class="step active" id="goofy-step1-indicator">
+          <div class="dot" id="goofy-step1-dot">1</div>Basics
+        </div>
+        <div class="line"></div>
+        <div class="step" id="goofy-step2-indicator">
+          <div class="dot" id="goofy-step2-dot">2</div>About you
+        </div>
+        <div class="line"></div>
+        <div class="step" id="goofy-step3-indicator">
+          <div class="dot" id="goofy-step3-dot">3</div>Done
+        </div>
+      </div>
+      <div class="success" id="yay-success">Great! Your account is ready.</div>
+      <div class="social">
+        <button class="btn soft-btn" onclick="alert('Google sign-up is not active in this demo.')">Continue with
+          Google</button>
+        <button class="btn soft-btn" onclick="alert('Facebook sign-up is not active in this demo.')">Continue with
+          Facebook</button>
+      </div>
+      <div class="line-text">or use the form below</div>
+      <form id="signup-fun-form" novalidate>
+        <div id="step1-silly">
+          <div class="two-grid">
+            <div class="field"><label class="label" for="first-name-bubble">First name *</label><input class="input"
+                type="text" id="first-name-bubble" placeholder="Sasha" autocomplete="given-name" />
+              <div class="error" id="first-name-bubble-error"></div>
+            </div>
+            <div class="field"><label class="label" for="last-name-bubble">Last name *</label><input class="input"
+                type="text" id="last-name-bubble" placeholder="Adhikari" autocomplete="family-name" />
+              <div class="error" id="last-name-bubble-error"></div>
+            </div>
+          </div>
+          <div class="field"><label class="label" for="email-sparkle">Email *</label><input class="input" type="email"
+              id="email-sparkle" placeholder="you@example.com" autocomplete="email" />
+            <div class="error" id="email-sparkle-error"></div>
+          </div>
+          <div class="field"><label class="label" for="secret-pw">Password *</label>
+            <div class="mod-input"><input class="input" type="password" id="secret-pw"
+                placeholder="At least 6 characters" autocomplete="new-password" /><button type="button" class="pw-btn"
+                id="pw-peek1">Show</button></div>
+            <div class="meter">
+              <div class="meter-fill" id="pw-strength-fill"></div>
+            </div>
+            <div class="meter-text" id="pw-strength-text">Enter a password</div>
+            <div class="error" id="secret-pw-error"></div>
+          </div>
+          <div class="field"><label class="label" for="secret-pw2">Confirm password *</label>
+            <div class="mod-input"><input class="input" type="password" id="secret-pw2"
+                placeholder="Same password again" autocomplete="new-password" /><button type="button" class="pw-btn"
+                id="pw-peek2">Show</button></div>
+            <div class="error" id="secret-pw2-error"></div>
+          </div>
+          <button type="button" class="btn main-btn full-btn" id="next-button-zoom">Continue</button>
+        </div>
+        <div id="step2-silly" style="display:none;">
+          <div class="field"><label class="label" for="home-country-bubble">Where are you from?</label><input
+              class="input" type="text" id="home-country-bubble" placeholder="Country / nationality" /></div>
+          <div class="field"><label class="label" for="experience-level-rocket">Trekking experience *</label><select
+              class="select-control" id="experience-level-rocket">
+              <option value="">Select experience</option>
+              <option value="Beginner">Beginner</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+            <div class="error" id="experience-level-rocket-error"></div>
+          </div>
+          <div class="field"><label class="label">Regions you are curious about</label>
+            <div class="tag-list"><label class="tag"><input type="checkbox" value="Khumbu" /> Khumbu</label><label
+                class="tag"><input type="checkbox" value="Annapurna" /> Annapurna</label><label class="tag"><input
+                  type="checkbox" value="Langtang" /> Langtang</label><label class="tag"><input type="checkbox"
+                  value="Mustang" /> Mustang</label><label class="tag"><input type="checkbox" value="Eastern" /> Eastern
+                Nepal</label></div>
+          </div>
+          <div class="field"><label class="label" for="phone-bubble">Phone number (optional)</label><input class="input"
+              type="tel" id="phone-bubble" placeholder="+977 98XXXXXXXX" /></div>
+          <div class="check-line"><input type="checkbox" id="pinky-swear" /> <label for="pinky-swear">I agree to the
+              site terms and privacy policy.</label></div>
+          <div class="error" id="pinky-swear-error"></div>
+          <div class="two-grid" style="gap:12px;">
+            <button type="button" class="btn faint-btn" id="back-button-zoom">Back</button>
+            <button type="submit" class="btn main-btn" id="make-account-button">Create account</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script>
+    function $(id) {
+      return document.getElementById(id);
+    }
+
+    function showError(id, message) {
+      var input = $(id);
+      var error = $(id + '-error');
+      if (input) input.classList.add('has-error');
+      if (error) {
+        error.textContent = message;
+        error.style.display = 'block';
+      }
+    }
+
+    function clearError(id) {
+      var input = $(id);
+      var error = $(id + '-error');
+      if (input) input.classList.remove('has-error');
+      if (error) error.style.display = 'none';
+    }
+
+    function setupToggle(inputId, btnId) {
+      var input = $(inputId);
+      var button = $(btnId);
+      if (!input || !button) return;
+
+      button.addEventListener('click', function () {
+        var isHidden = input.type === 'password';
+        input.type = isHidden ? 'text' : 'password';
+        button.textContent = isHidden ? 'Hide' : 'Show';
+      });
+    }
+
+    function getPasswordStrength(password) {
+      var score = 0;
+      if (password.length >= 8) score++;
+      if (/[A-Z]/.test(password)) score++;
+      if (/[0-9]/.test(password)) score++;
+      if (/[^A-Za-z0-9]/.test(password)) score++;
+      return Math.min(score, 4);
+    }
+
+    function updateStrengthMeter(password) {
+      var fill = $('pw-strength-fill');
+      var text = $('pw-strength-text');
+      var levels = ['0%', '25%', '50%', '75%', '100%'];
+      var colors = ['#ddd', '#f1c40f', '#f39c12', '#27ae60', '#2d6a4f'];
+      var labels = ['Enter a password', 'Weak password', 'Fair password', 'Strong password', 'Very strong'];
+      var index = password.length === 0 ? 0 : getPasswordStrength(password);
+
+      if (fill) fill.style.width = levels[index];
+      if (fill) fill.style.backgroundColor = colors[index];
+      if (text) text.textContent = labels[index];
+    }
+
+    function validateStep1() {
+      clearError('first-name-bubble');
+      clearError('last-name-bubble');
+      clearError('email-sparkle');
+      clearError('secret-pw');
+      clearError('secret-pw2');
+
+      var firstName = $('first-name-bubble').value.trim();
+      var lastName = $('last-name-bubble').value.trim();
+      var email = $('email-sparkle').value.trim();
+      var password = $('secret-pw').value;
+      var confirmPassword = $('secret-pw2').value;
+      var valid = true;
+
+      if (firstName.length < 2) {
+        showError('first-name-bubble', 'Enter your first name.');
+        valid = false;
+      }
+      if (lastName.length < 2) {
+        showError('last-name-bubble', 'Enter your last name.');
+        valid = false;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('email-sparkle', 'Enter a valid email.');
+        valid = false;
+      }
+      if (password.length < 6) {
+        showError('secret-pw', 'Choose a password with at least 6 characters.');
+        valid = false;
+      }
+      if (password !== confirmPassword) {
+        showError('secret-pw2', 'Passwords do not match.');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    function goToStep2() {
+      $('step1-silly').style.display = 'none';
+      $('step2-silly').style.display = 'block';
+      $('goofy-step1-indicator').classList.remove('active');
+      $('goofy-step1-indicator').classList.add('done');
+      $('goofy-step1-dot').textContent = '✓';
+      $('goofy-step2-indicator').classList.add('active');
+    }
+
+    function goBackToStep1() {
+      $('step2-silly').style.display = 'none';
+      $('step1-silly').style.display = 'block';
+      $('goofy-step2-indicator').classList.remove('active');
+      $('goofy-step1-indicator').classList.remove('done');
+      $('goofy-step1-indicator').classList.add('active');
+      $('goofy-step1-dot').textContent = '1';
+    }
+
+    function validateFinalStep() {
+      clearError('experience-level-rocket');
+      clearError('pinky-swear');
+
+      var experience = $('experience-level-rocket').value;
+      var termsChecked = $('pinky-swear').checked;
+      var valid = true;
+
+      if (!experience) {
+        showError('experience-level-rocket', 'Please select your experience level.');
+        valid = false;
+      }
+      if (!termsChecked) {
+        showError('pinky-swear', 'You need to agree to continue.');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    setupToggle('secret-pw', 'pw-peek1');
+    setupToggle('secret-pw2', 'pw-peek2');
+
+    $('secret-pw').addEventListener('input', function () {
+      updateStrengthMeter(this.value);
+    });
+
+    $('next-button-zoom').addEventListener('click', function () {
+      if (validateStep1()) {
+        goToStep2();
+      }
+    });
+
+    $('back-button-zoom').addEventListener('click', function () {
+      goBackToStep1();
+    });
+
+    $('signup-fun-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!validateFinalStep()) return;
+
+      var button = $('make-account-button');
+      button.textContent = 'Creating account…';
+      button.disabled = true;
+
+      setTimeout(function () {
+        $('yay-success').style.display = 'flex';
+        button.textContent = 'Account created';
+      }, 900);
+    });
+
+    ['first-name-bubble', 'last-name-bubble', 'email-sparkle', 'secret-pw', 'secret-pw2'].forEach(function (id) {
+      $(id).addEventListener('input', function () {
+        clearError(id);
+      });
+    });
+  </script>
+</body>
+
+</html>
