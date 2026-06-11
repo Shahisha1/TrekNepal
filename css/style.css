@@ -442,7 +442,7 @@ button,
 }
 
 .about-list li::before {
-    content: 'âœ“';
+    content: '✔️';
     color: #2d5a3d;
     font-weight: 700;
     flex-shrink: 0;
