@@ -952,62 +952,58 @@ button,
     padding: 5px 12px;
 }
 
-.footer-grid {
-    max-width: auto;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    padding: 48px 24px 28px;
+footer {
+    width: 100%;
     background: #1c1a17;
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.85rem;
+}
+
+.footer-grid {
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 14px 18px 12px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.9rem;
+    text-align: center;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .footer-brand {
     font-family: 'Lora', serif;
     font-size: 1.3rem;
-    color: white;
-    margin-bottom: 8px;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    margin-bottom: 2px;
 }
 
 .footer-text {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.45);
-    line-height: 1.7;
-}
-
-.footer-col h4 {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 14px;
-}
-
-.footer-col ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-col ul a {
-    color: rgba(255, 255, 255, 0.45);
-    font-size: 0.85rem;
-}
-
-.footer-col ul a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.62);
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 .footer-note {
-    max-width: 1180px;
-    margin: 28px auto 0;
-    padding-top: 20px;
+    max-width: 980px;
+    margin: 16px auto 0;
+    padding-top: 12px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.8rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
 }
+
+.footer-col,
+.footer-col h4,
+.footer-col ul,
+.footer-col ul a {
+    display: none;
+}
+
 
 .placeholder-text {
     color: #7a7469;
@@ -1024,10 +1020,6 @@ button,
         grid-template-columns: 1fr;
         gap: 32px;
         padding: 48px 24px;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
     }
 }
 
