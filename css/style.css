@@ -1095,8 +1095,4 @@ footer {
     .stat-item:last-child {
         border-bottom: none;
     }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
 }
