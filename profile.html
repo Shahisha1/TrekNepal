@@ -25,12 +25,16 @@
         </nav>
 
         <header class="profile-header">
-            <div class="container"> 
+            <div class="container">
                 <div class="profile-info">
-                    <div class="profile-avatar">S</div>
+                    <div class="profile-avatar" id="profile-avatar-display">
+                        S
+                    </div>
                     <div class="profile-details">
-                        <h1>Shahisha Adhikari</h1>
-                        <p>Intermediate Trekker &middot; Joined June 2025</p>
+                        <h1 id="profile-name-display">Shahisha Adhikari</h1>
+                        <p id="profile-sub-display">
+                            Intermediate Trekker &middot; Joined June 2025
+                        </p>
                     </div>
                 </div>
             </div>
@@ -39,15 +43,15 @@
         <main class="container">
             <div class="stats-grid">
                 <div class="stat-box">
-                    <span class="stat-val">3</span>
+                    <span class="stat-val" id="stat-saved-count">3</span>
                     <span class="stat-lbl">Saved Treks</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-val">12</span>
+                    <span class="stat-val" id="stat-enquiry-count">12</span>
                     <span class="stat-lbl">Enquiries</span>
                 </div>
                 <div class="stat-box">
-                    <span class="stat-val">Annapurna</span>
+                    <span class="stat-val" id="stat-top-region">Annapurna</span>
                     <span class="stat-lbl">Top Region</span>
                 </div>
             </div>
@@ -63,40 +67,8 @@
             <div class="two-columns">
                 <section class="profile-section">
                     <h2>Recent Enquiries</h2>
-                    <div class="enquiry-list">
-                        <div class="enquiry-item">
-                            <div class="enquiry-info">
-                                <span class="enquiry-name"
-                                    >Annapurna Circuit Trek</span
-                                >
-                                <span class="enquiry-date"
-                                    >Requested on 12 June 2025</span
-                                >
-                            </div>
-                            <span class="enquiry-status">Active</span>
-                        </div>
-                        <div class="enquiry-item">
-                            <div class="enquiry-info">
-                                <span class="enquiry-name"
-                                    >Langtang Valley Trek</span
-                                >
-                                <span class="enquiry-date"
-                                    >Requested on 05 June 2025</span
-                                >
-                            </div>
-                            <span class="enquiry-status">Resolved</span>
-                        </div>
-                        <div class="enquiry-item">
-                            <div class="enquiry-info">
-                                <span class="enquiry-name"
-                                    >Everest Base Camp</span
-                                >
-                                <span class="enquiry-date"
-                                    >Requested on 20 May 2025</span
-                                >
-                            </div>
-                            <span class="enquiry-status">Resolved</span>
-                        </div>
+                    <div class="enquiry-list" id="enquiry-list-container">
+                        <!-- Loaded via JS -->
                     </div>
                 </section>
 
@@ -104,6 +76,17 @@
                     <h2>Account Settings</h2>
                     <div class="contact-form-box" style="margin-bottom: 0">
                         <form id="profile-settings-form" novalidate>
+                            <div class="form-field">
+                                <label class="field-label" for="profile-name"
+                                    >Full Name</label
+                                >
+                                <input
+                                    class="field-input"
+                                    type="text"
+                                    id="profile-name"
+                                    value="Shahisha Adhikari"
+                                />
+                            </div>
                             <div class="form-field">
                                 <label class="field-label" for="profile-email"
                                     >Email Address</label
