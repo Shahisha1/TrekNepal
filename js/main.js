@@ -211,24 +211,78 @@ function initBackToTop() {
   });
 }
 
+const DEFAULT_USER = {
+  name: "Shahisha Adhikari",
+  email: "shahisha123adh@gmail.com",
+  level: "Intermediate Trekker",
+  joined: "June 2025",
+  savedIds: [2, 7, 8],
+  enquiries: [
+    { name: "Annapurna Circuit Trek", date: "12 June 2025", status: "Active" },
+    { name: "Langtang Valley Trek", date: "05 June 2025", status: "Resolved" },
+    { name: "Everest Base Camp", date: "20 May 2025", status: "Resolved" },
+  ],
+  topRegion: "Annapurna",
+};
+
 function initProfilePage() {
-  getRoutes(function (routes) {
-    // Mock saved routes (ID 2, 7, 8)
-    var savedIds = [2, 7, 8];
-    var saved = routes.filter(function (r) {
-      return savedIds.includes(r.id);
+  let user = JSON.parse(localStorage.getItem("trekUser")) || DEFAULT_USER;
+
+  const render = () => {
+    // Header
+    const nameDisplay = document.getElementById("profile-name-display");
+    const subDisplay = document.getElementById("profile-sub-display");
+    const avatarDisplay = document.getElementById("profile-avatar-display");
+    if (nameDisplay) nameDisplay.textContent = user.name;
+    if (subDisplay)
+      subDisplay.innerHTML = `${user.level} &middot; Joined ${user.joined}`;
+    if (avatarDisplay) avatarDisplay.textContent = user.name.charAt(0);
+
+    // Stats
+    const savedCount = document.getElementById("stat-saved-count");
+    const enquiryCount = document.getElementById("stat-enquiry-count");
+    const topRegion = document.getElementById("stat-top-region");
+    if (savedCount) savedCount.textContent = user.savedIds.length;
+    if (enquiryCount) enquiryCount.textContent = user.enquiries.length;
+    if (topRegion) topRegion.textContent = user.topRegion;
+
+    // Settings Inputs
+    const nameInput = document.getElementById("profile-name");
+    const emailInput = document.getElementById("profile-email");
+    if (nameInput) nameInput.value = user.name;
+    if (emailInput) emailInput.value = user.email;
+
+    // Saved Routes Grid
+    getRoutes(function (routes) {
+      const saved = routes.filter((r) => user.savedIds.includes(r.id));
+      const grid = document.getElementById("saved-routes-grid");
+      if (grid) {
+        grid.innerHTML = saved.length
+          ? saved.map(buildCard).join("")
+          : '<p class="placeholder-text">You haven\'t saved any routes yet.</p>';
+      }
     });
 
-    var grid = document.getElementById("saved-routes-grid");
-    if (grid) {
-      if (saved.length > 0) {
-        grid.innerHTML = saved.map(buildCard).join("");
-      } else {
-        grid.innerHTML =
-          '<p class="placeholder-text">You haven\'t saved any routes yet.</p>';
-      }
+    // Enquiries List
+    const enquiryContainer = document.getElementById("enquiry-list-container");
+    if (enquiryContainer) {
+      enquiryContainer.innerHTML = user.enquiries
+        .map(
+          (e) => `
+        <div class="enquiry-item">
+          <div class="enquiry-info">
+            <span class="enquiry-name">${e.name}</span>
+            <span class="enquiry-date">Requested on ${e.date}</span>
+          </div>
+          <span class="enquiry-status">${e.status}</span>
+        </div>
+      `,
+        )
+        .join("");
     }
-  });
+  };
+
+  render();
 
   // Handle settings form
   var settingsForm = document.getElementById("profile-settings-form");
@@ -237,11 +291,19 @@ function initProfilePage() {
   if (settingsForm) {
     settingsForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      const newName = document.getElementById("profile-name").value;
+      const newEmail = document.getElementById("profile-email").value;
+
+      user.name = newName;
+      user.email = newEmail;
+      localStorage.setItem("trekUser", JSON.stringify(user));
+
       var btn = settingsForm.querySelector("button");
       btn.disabled = true;
       btn.textContent = "Updating...";
 
       setTimeout(function () {
+        render();
         if (successPanel) successPanel.style.display = "flex";
         btn.disabled = false;
         btn.textContent = "Update Profile";
