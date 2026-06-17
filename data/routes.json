@@ -7,42 +7,42 @@
     "duration": "14 days",
     "maxAltitude": "5364m",
     "bestSeason": "Oct-Nov, Mar-May",
-    "permit": "TIMS + Sagarmatha NP",
     "img": "asset/EverestBaseCamp.jpg",
-    "description": "The world-famous trek to the foot of Mount Everest, passing through Sherpa villages, ancient monasteries, and dramatic glacial terrain.",
-    "highlights": [
-      "Namche Bazaar",
-      "Tengboche Monastery",
-      "Khumbu Glacier",
-      "Gorak Shep"
-    ],
-    "facilities": [
-      "Teahouses",
-      "Medical posts",
-      "Helicopter rescue"
+    "description": "The big one. Walk through Sherpa villages to the foot of the world's highest peak. It's tough but the views are unbeatable.",
+    "gallery": [
+      {
+        "title": "Everest Base Camp",
+        "img": "asset/EverestBaseCamp.jpg",
+        "note": "Right at the bottom of the world's tallest mountain."
+      },
+      {
+        "title": "Tengboche Monastery",
+        "img": "asset/TengbocheMonastery.png",
+        "note": "A beautiful monastery along the way."
+      }
     ]
   },
   {
     "id": 2,
-    "name": "Annapurna Circuit",
+    "name": "Annapurna Circuit Trek",
     "region": "Annapurna",
     "difficulty": "Moderate",
-    "duration": "12–21 days",
+    "duration": "12–15 days",
     "maxAltitude": "5416m",
     "bestSeason": "Oct–Nov, Mar–Apr",
-    "permit": "TIMS + ACAP",
     "img": "asset/AnnapurnaCircuitTrek.jpg",
-    "description": "A classic circumnavigation of the Annapurna massif through diverse landscapes from subtropical forests to high alpine desert.",
-    "highlights": [
-      "Thorong La Pass",
-      "Muktinath Temple",
-      "Manang Valley",
-      "Poon Hill"
-    ],
-    "facilities": [
-      "Teahouses",
-      "Guesthouses",
-      "Medical camps"
+    "description": "A classic loop. You'll see everything from green forests to high-altitude deserts and cross a massive mountain pass.",
+    "gallery": [
+      {
+        "title": "Thorong La Pass",
+        "img": "asset/AnnapurnaCircuitTrek.jpg",
+        "note": "The highest point of the trek."
+      },
+      {
+        "title": "Annapurna Range",
+        "img": "asset/PoonHillSunrise.jpg",
+        "note": "Watching the sun come up over the peaks."
+      }
     ]
   },
   {
@@ -53,18 +53,14 @@
     "duration": "7–10 days",
     "maxAltitude": "4984m",
     "bestSeason": "Oct–Nov, Mar–May",
-    "permit": "TIMS + Langtang NP",
     "img": "asset/LangtangValley.jpg",
-    "description": "A beautiful valley trek close to Kathmandu offering Himalayan views, Tamang culture, and Kyanjin Gompa.",
-    "highlights": [
-      "Kyanjin Gompa",
-      "Langtang Village",
-      "Tserko Ri",
-      "Cheese Factory"
-    ],
-    "facilities": [
-      "Teahouses",
-      "Basic guesthouses"
+    "description": "Close to Kathmandu and very welcoming. Great for seeing local culture and dramatic valley views without the EBC crowds.",
+    "gallery": [
+      {
+        "title": "Langtang Valley Floor",
+        "img": "asset/LangtangValley.jpg",
+        "note": "Walking through the heart of the valley."
+      }
     ]
   },
   {
@@ -74,20 +70,15 @@
     "difficulty": "Easy",
     "duration": "4–5 days",
     "maxAltitude": "3210m",
-    "bestSeason": "Year-round (best Dec–Feb for rhododendrons)",
-    "permit": "TIMS + ACAP",
+    "bestSeason": "Year-round",
     "img": "asset/GhorepaniPoonHillTrek.jpg",
-    "description": "A short and accessible trek rewarding hikers with a spectacular sunrise panorama over the Annapurna range.",
-    "highlights": [
-      "Poon Hill sunrise",
-      "Ghorepani village",
-      "Rhododendron forests",
-      "Tadapani"
-    ],
-    "facilities": [
-      "Teahouses",
-      "Restaurants",
-      "Wi-Fi available"
+    "description": "Short, sweet, and perfect for beginners. The sunrise view from the top is one of the best in Nepal.",
+    "gallery": [
+      {
+        "title": "Poon Hill Sunrise",
+        "img": "asset/PoonHillSunrise.jpg",
+        "note": "The famous sunrise spot."
+      }
     ]
   },
   {
@@ -95,43 +86,34 @@
     "name": "Manaslu Circuit Trek",
     "region": "Manaslu",
     "difficulty": "Hard",
-    "duration": "14–18 days",
+    "duration": "14 days",
     "maxAltitude": "5160m",
     "bestSeason": "Sep–Nov, Mar–May",
-    "permit": "Restricted Area Permit + MCAP + ACAP",
     "img": "asset/ManasluTrek.jpg",
-    "description": "A remote and less-crowded alternative to the Annapurna Circuit, circling the world's eighth-highest peak through wild Tibetan-influenced culture.",
-    "highlights": [
-      "Larkya La Pass",
-      "Birendra Lake",
-      "Tsum Valley",
-      "Tibetan villages"
-    ],
-    "facilities": [
-      "Basic teahouses",
-      "Limited medical"
-    ]
+    "description": "A bit more 'wild' than the others. It's a remote circuit around a stunning peak with fewer tourists.",
+    "gallery": []
   },
   {
     "id": 6,
     "name": "Upper Mustang Trek",
     "region": "Mustang",
     "difficulty": "Moderate",
-    "duration": "10–14 days",
+    "duration": "10 days",
     "maxAltitude": "3840m",
-    "bestSeason": "May–Oct (rain shadow area)",
-    "permit": "Restricted Area Permit ($500)",
+    "bestSeason": "May–Oct",
     "img": "asset/UpperMustang.jpg",
-    "description": "A surreal journey into the ancient walled kingdom of Lo, featuring dramatic red cliffs, cave monasteries, and Tibetan culture.",
-    "highlights": [
-      "Lo Manthang",
-      "Chhoser Caves",
-      "Kagbeni",
-      "Muktinath"
-    ],
-    "facilities": [
-      "Guesthouses",
-      "Monastery stays"
+    "description": "Like walking on another planet. Dry, red cliffs and ancient walled cities. Perfect if you want to avoid the rain.",
+    "gallery": [
+      {
+        "title": "Lo Manthang",
+        "img": "asset/LoMantang.jpg",
+        "note": "The ancient capital."
+      },
+      {
+        "title": "Mustang Cliffs",
+        "img": "asset/LoMustang.webp",
+        "note": "Eroded cliffs in the rain shadow."
+      }
     ]
   },
   {
@@ -139,21 +121,17 @@
     "name": "Mardi Himal Trek",
     "region": "Annapurna",
     "difficulty": "Moderate",
-    "duration": "5–7 days",
+    "duration": "5 days",
     "maxAltitude": "4500m",
     "bestSeason": "Oct–Dec, Mar–May",
-    "permit": "TIMS + ACAP",
     "img": "asset/MardiHimal.jpg",
-    "description": "A hidden gem trail offering close-up views of Machhapuchhre and Annapurna South without the crowds.",
-    "highlights": [
-      "Mardi Himal Base Camp",
-      "Machhapuchhre views",
-      "Low Camp",
-      "High Camp"
-    ],
-    "facilities": [
-      "Tea houses",
-      "Camping spots"
+    "description": "A hidden gem. A shorter ridge trek that gets you incredibly close to the iconic 'Fishtail' mountain.",
+    "gallery": [
+      {
+        "title": "Machhapuchhre View",
+        "img": "asset/Machhapuchchhre.jpg",
+        "note": "The mountain that looks like a fish tail."
+      }
     ]
   },
   {
@@ -161,65 +139,47 @@
     "name": "Gosaikunda Lake Trek",
     "region": "Langtang",
     "difficulty": "Moderate",
-    "duration": "6–8 days",
+    "duration": "6 days",
     "maxAltitude": "4380m",
-    "bestSeason": "Oct–Nov, Mar–May, Aug (Janai Purnima)",
-    "permit": "TIMS + Langtang NP",
+    "bestSeason": "Oct–Nov, Mar–May",
     "img": "asset/GosaikundaLake.jpg",
-    "description": "A sacred pilgrimage trek to the holy alpine lake of Gosaikunda with stunning ridge walks.",
-    "highlights": [
-      "Gosaikunda Lake",
-      "Laurebina Pass",
-      "Helambu region",
-      "Sing Gompa"
-    ],
-    "facilities": [
-      "Tea houses",
-      "Basic lodges"
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Kanchenjunga Base Camp",
-    "region": "Eastern Nepal",
-    "difficulty": "Extreme",
-    "duration": "20–25 days",
-    "maxAltitude": "5143m",
-    "bestSeason": "Oct–Nov, Apr–May",
-    "permit": "Restricted Area Permit + KCA",
-    "img": "asset/KanchenjungaBaseCamp.jpg",
-    "description": "A remote and demanding expedition to the base of the world's third-highest peak through pristine wilderness.",
-    "highlights": [
-      "Pangpema Base Camp",
-      "Yalung Glacier",
-      "Taplejung",
-      "Traditional villages"
-    ],
-    "facilities": [
-      "Very basic camps",
-      "Self-sufficient required"
+    "description": "A sacred lake high in the mountains. The climb is steady, and the lakes at the top are crystal blue.",
+    "gallery": [
+      {
+        "title": "Sacred Gosaikunda Lake",
+        "img": "asset/GosaikundaLake.jpg",
+        "note": "A very important place for locals."
+      }
     ]
   },
   {
     "id": 10,
+    "name": "Kanchenjunga Base Camp Trek",
+    "region": "Eastern Nepal",
+    "difficulty": "Extreme",
+    "duration": "20 days",
+    "maxAltitude": "5143m",
+    "bestSeason": "Oct–Nov, Apr–May",
+    "img": "asset/KanchenjuungaBaseCamp.jpg",
+    "description": "A long, wild journey to the far east of Nepal. Only for experienced hikers who want a real adventure.",
+    "gallery": [
+      {
+        "title": "Kanchenjunga Base Camp",
+        "img": "asset/KanchenjuungaBaseCamp.jpg",
+        "note": "Deep in the eastern mountains."
+      }
+    ]
+  },
+  {
+    "id": 11,
     "name": "Khopra Ridge Trek",
     "region": "Annapurna",
     "difficulty": "Easy",
-    "duration": "6–8 days",
+    "duration": "6 days",
     "maxAltitude": "3660m",
     "bestSeason": "Oct–Apr",
-    "permit": "TIMS + ACAP",
     "img": "asset/KhopraRidge.jpg",
-    "description": "An off-the-beaten-path ridge trek offering panoramic views with far fewer trekkers.",
-    "highlights": [
-      "Khopra Danda ridge",
-      "Khayer Lake",
-      "Swanta Village",
-      "Annapurna views"
-    ],
-    "facilities": [
-      "Community lodges",
-      "Camping"
-    ]
+    "description": "A quiet alternative to the busy trails. You stay in community lodges and get great views of the Dhaulagiri range.",
+    "gallery": []
   }
 ]

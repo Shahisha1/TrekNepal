@@ -1,123 +1,139 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Compare Routes - TrekNepal</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Compare Routes - TrekNepal</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-
-<body>
-  <nav class="topbar">
-    <div class="brand">TrekNepal</div>
-    <ul class="menu-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="routes.html">Routes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="compare.html" class="active">Compare</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <div class="menu-auth">
-      <a href="login.html" class="btn-action btn-faint btn-small">Sign In</a>
-      <a href="signup.html" class="btn-action btn-main btn-small">Sign Up</a>
-    </div>
-    <button class="menu-toggle">Menu</button>
-  </nav>
-  <div class="block-section">
-    <div class="block-inner">
-      <h1>Compare routes</h1>
-      <p>Pick two or three routes and see them side by side altitude, duration, permits, facilities.</p>
-      <div class="grid-two" style="gap:16px; flex-wrap:wrap; align-items:flex-end; margin-bottom:20px; display:flex;">
-        <div style="flex:1; min-width:180px;">
-          <label class="input-label">Route 1</label>
-          <select class="select-control" id="pick-one">
-            <option value=""> pick a route </option>
-          </select>
+    <body>
+        <nav class="header-nav">
+            <div class="logo-text">TrekNepal</div>
+            <ul class="nav-items">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="routes.html">Routes</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="compare.html" class="active">Compare</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="my-button outline-btn small-btn"
+                    >Sign In</a
+                >
+                <a href="signup.html" class="my-button main-btn small-btn"
+                    >Sign Up</a
+                >
+            </div>
+            <button class="mobile-menu-btn">Menu</button>
+        </nav>
+        <div class="section-part">
+            <div class="container">
+                <h1>Compare trekking routes</h1>
+                <p>Pick up to three routes to see how they differ.</p>
+                <div class="filter-bar">
+                    <div class="form-field" style="margin-bottom: 0">
+                        <select class="field-select" id="pick-one">
+                            <option value="">Select first route</option>
+                        </select>
+                    </div>
+                    <div class="form-field" style="margin-bottom: 0">
+                        <select class="field-select" id="pick-two">
+                            <option value="">Select second route</option>
+                        </select>
+                    </div>
+                    <div class="form-field" style="margin-bottom: 0">
+                        <select class="field-select" id="pick-three">
+                            <option value="">Select third route</option>
+                        </select>
+                    </div>
+                    <button class="my-button main-btn" id="compare-action">
+                        Compare Now
+                    </button>
+                </div>
+                <div id="compare-output">
+                    <div class="compare-empty">
+                        <p>Select at least two routes to start comparing.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div style="flex:1; min-width:180px;">
-          <label class="input-label">Route 2</label>
-          <select class="select-control" id="pick-two">
-            <option value=""> pick a route </option>
-          </select>
-        </div>
-        <div style="flex:1; min-width:180px;">
-          <label class="input-label">Route 3 <span style="color:#a8a197; font-size:0.9rem;">(optional)</span></label>
-          <select class="select-control" id="pick-three">
-            <option value=""> pick a route </option>
-          </select>
-        </div>
-        <button class="btn-action btn-main" id="compare-action">Compare</button>
-      </div>
-      <div id="compare-output" class="compare-empty">
-        <div class="big-symbol">=</div>
-        <p>Select at least 2 routes above, then hit Compare.</p>
-      </div>
-    </div>
-    </section>
-    <footer>
-      <div class="footer-grid">
-        <div>
-          <div class="footer-brand">TrekNepal</div>
-          <p class="footer-text">A student project from Pokhara University, Faculty of Management Studies.</p>
-        </div>
-      </div>
-      <div class="footer-note">©️ 2025 TrekNepal • Built with plain HTML, CSS, and JavaScript.</div>
-    </footer>
-    <script src="js/main.js"></script>
-    <script>
-      var allRoutes = [];
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TrekNepal</div>
+                    <p class="footer-desc">
+                        A student project from Pokhara University, Faculty of
+                        Management Studies.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 TrekNepal &middot; Pokhara University
+            </div>
+        </footer>
+        <script src="js/main.js"></script>
+        <script>
+            getRoutes(function (routes) {
+                var ids = ["pick-one", "pick-two", "pick-three"];
+                ids.forEach(function (id) {
+                    var sel = document.getElementById(id);
+                    routes.forEach(function (r) {
+                        var opt = document.createElement("option");
+                        opt.value = r.id;
+                        opt.textContent = r.name;
+                        sel.appendChild(opt);
+                    });
+                });
 
-      getRoutes(function (routes) {
-        allRoutes = routes;
-        ['pick-one', 'pick-two', 'pick-three'].forEach(function (id) {
-          var sel = document.getElementById(id);
-          routes.forEach(function (r) {
-            var opt = document.createElement('option');
-            opt.value = r.id;
-            opt.textContent = r.name;
-            sel.appendChild(opt);
-          });
-        });
-      });
+                document
+                    .getElementById("compare-action")
+                    .addEventListener("click", function () {
+                        var v1 = document.getElementById("pick-one").value;
+                        var v2 = document.getElementById("pick-two").value;
+                        var v3 = document.getElementById("pick-three").value;
+                        var picked = [v1, v2, v3]
+                            .filter(Boolean)
+                            .map(function (id) {
+                                return routes.find(function (r) {
+                                    return r.id == id;
+                                });
+                            });
 
-      document.getElementById('compare-action').addEventListener('click', function () {
-        var ids = [
-          parseInt(document.getElementById('pick-one').value),
-          parseInt(document.getElementById('pick-two').value),
-          parseInt(document.getElementById('pick-three').value)
-        ].filter(function (id) { return id > 0; });
+                        var html =
+                            '<table class="compare-grid"><thead><tr><th>Feature</th>';
+                        picked.forEach(function (p) {
+                            html += "<th>" + p.name + "</th>";
+                        });
+                        html += "</tr></thead><tbody>";
 
-        if (ids.length < 2) { alert('Please select at least 2 routes.'); return; }
+                        var rows = [
+                            ["Region", "region"],
+                            ["Difficulty", "difficulty"],
+                            ["Duration", "duration"],
+                            ["Max Altitude", "maxAltitude"],
+                            ["Best Season", "bestSeason"],
+                        ];
 
-        var selected = ids.map(function (id) {
-          return allRoutes.find(function (r) { return r.id === id; });
-        });
+                        rows.forEach(function (row) {
+                            html +=
+                                "<tr><td>" +
+                                row[0] +
+                                "</td>" +
+                                picked
+                                    .map(function (p) {
+                                        return "<td>" + p[row[1]] + "</td>";
+                                    })
+                                    .join("") +
+                                "</tr>";
+                        });
 
-        var rows = [
-          ['Region', function (r) { return r.region; }],
-          ['Difficulty', function (r) { return r.difficulty; }],
-          ['Duration', function (r) { return r.duration; }],
-          ['Max altitude', function (r) { return r.maxAltitude; }],
-          ['Best season', function (r) { return r.bestSeason; }],
-          ['Permit', function (r) { return r.permit; }],
-          ['Facilities', function (r) { return r.facilities.join(', '); }]
-        ];
-
-        var thead = '<th>—</th>' + selected.map(function (r) { return '<th>' + r.name + '</th>'; }).join('');
-        var tbody = rows.map(function (row) {
-          return '<tr><td>' + row[0] + '</td>' + selected.map(function (r) { return '<td>' + row[1](r) + '</td>'; }).join('') + '</tr>';
-        }).join('');
-
-        var links = selected.map(function (r) {
-          return '<a href="contact.html" class="btn-action btn-faint" style="margin-top:8px;">Enquire about ' + r.name.split(' ')[0] + '</a>';
-        }).join(' ');
-
-        document.getElementById('compare-output').innerHTML =
-          '<div style="overflow-x:auto;"><table class="compare-grid"><thead><tr>' + thead + '</tr></thead><tbody>' + tbody + '</tbody></table></div>' +
-          '<div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">' + links + '</div>';
-      });
-    </script>
-</body>
-
+                        html += "</tbody></table>";
+                        document.getElementById("compare-output").innerHTML =
+                            html;
+                    });
+            });
+        </script>
+    </body>
 </html>

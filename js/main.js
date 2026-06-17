@@ -1,66 +1,258 @@
-﻿var navToggle = document.querySelector('.menu-toggle');
-var navLinks = document.querySelector('.menu-links');
-
+﻿const navToggle = document.querySelector(".mobile-menu-btn");
+const navLinks = document.querySelector(".nav-items");
 
 if (navToggle) {
-  navToggle.addEventListener('click', function () { navLinks.classList.toggle('open'); });
+  navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
 }
 
+document.querySelectorAll(".nav-items a").forEach((link) => {
+  if (link.href === window.location.href) link.classList.add("active");
+});
 
-var allNavLinks = document.querySelectorAll('.menu-links a');
-allNavLinks.forEach(function (link) { if (link.href === window.location.href) { link.classList.add('active'); } });
-function getRoutes(callback) { fetch('data/routes.json').then(function (response) { return response.json(); }).then(function (data) { callback(data); }); }
-function buildBadge(difficulty) { var map = { 'Easy': 'badge-easy', 'Moderate': 'badge-medium', 'Hard': 'badge-hard', 'Extreme': 'badge-extreme' }; return '<span class="badge ' + (map[difficulty] || 'badge-medium') + '">' + difficulty + '</span>'; }
-function getRouteImage(routeName) {
-  var map = {
-    'Everest Base Camp Trek': 'asset/EverestBaseCamp.jpg',
-    'Annapurna Circuit': 'asset/AnnapurnaCircuitTrek.jpg',
-    'Langtang Valley Trek': 'asset/LangtangValley.jpg',
-    'Ghorepani Poon Hill Trek': 'asset/PoonHillSunrise.jpg',
-    'Manaslu Circuit Trek': 'asset/ManasluTrek.jpg',
-    'Upper Mustang Trek': 'asset/LoMustang.webp',
-    'Mardi Himal Trek': 'asset/MardiHimal.jpg',
-    'Gosaikunda Lake Trek': 'asset/GosaikundaLake.jpg',
-    'Kanchenjunga Base Camp': 'asset/KanchenjuungaBaseCamp.jpg',
-    'Khopra Ridge Trek': 'asset/KhopraRidge.jpg'
-  }; return map[routeName] || 'asset/Logo.jpg';
-}
-function buildCard(route) { return '<div class="route-card" data-difficulty="' + route.difficulty + '" data-region="' + route.region + '"><div class="route-icon" style="background-image:url(\'' + getRouteImage(route.name) + '\');"></div><div class="route-body"><div class="route-tags">' + buildBadge(route.difficulty) + '<span class="badge badge-region">' + route.region + '</span></div><h3 class="route-title">' + route.name + '</h3><div class="route-details"><span>' + route.duration + '</span><span>' + route.maxAltitude + '</span><span>' + route.bestSeason + '</span></div><p class="route-summary">' + route.description.substring(0, 115) + 'â€¦</p><a href="contact.html" class="route-link">Enquire About This Route</a></div></div>'; }
+const getRoutes = (cb) => {
+  fetch("data/routes.json")
+    .then((res) => res.json())
+    .then(cb);
+};
+
+const getGallery = (cb) => {
+  getRoutes((routes) => {
+    const items = [];
+    routes.forEach((r) => {
+      if (r.gallery) {
+        r.gallery.forEach((img) => {
+          items.push({ ...img, region: r.region });
+        });
+      }
+    });
+    cb(items);
+  });
+};
+
+const buildBadge = (difficulty) => {
+  const map = {
+    Easy: "tag-easy",
+    Moderate: "tag-medium",
+    Hard: "tag-hard",
+    Extreme: "tag-extreme",
+  };
+  return `<span class="tag ${map[difficulty] || "tag-medium"}">${difficulty}</span>`;
+};
+
+const buildCard = (route) => `
+    <div class="trek-box" data-difficulty="${route.difficulty}" data-region="${route.region}">
+        <div class="trek-img" style="background-image:url('${route.img || "asset/Logo.svg"}')"></div>
+        <div class="trek-info">
+            <div class="trek-labels">${buildBadge(route.difficulty)}<span class="tag tag-area">${route.region}</span></div>
+            <h3 class="trek-name">${route.name}</h3>
+            <div class="trek-stats">
+                <span>${route.duration}</span><span>${route.maxAltitude}</span><span>${route.bestSeason}</span>
+            </div>
+            <p class="trek-desc">${route.description.substring(0, 115)}...</p>
+            <a href="contact.html" class="trek-btn">Enquire About This Route</a>
+        </div>
+    </div>`;
+
 function initRoutesPage(routes) {
-  var grid = document.getElementById('routes-list'); var searchInput = document.getElementById('route-search'); var filterBtns = document.querySelectorAll('[data-filter]'); var activeFilter = 'all'; var searchTerm = '';
-  function showRoutes() { var filtered = routes.filter(function (route) { var matchesDifficulty = activeFilter === 'all' || route.difficulty === activeFilter; var matchesSearch = route.name.toLowerCase().includes(searchTerm) || route.region.toLowerCase().includes(searchTerm); return matchesDifficulty && matchesSearch; }); if (filtered.length === 0) { grid.innerHTML = '<p class="placeholder-text">No routes found. Try a different search or filter.</p>'; } else { grid.innerHTML = filtered.map(buildCard).join(''); } }
-  filterBtns.forEach(function (btn) { btn.addEventListener('click', function () { filterBtns.forEach(function (b) { b.classList.remove('active'); }); btn.classList.add('active'); activeFilter = btn.getAttribute('data-filter'); showRoutes(); }); });
-  if (searchInput) { searchInput.addEventListener('input', function () { searchTerm = searchInput.value.toLowerCase(); showRoutes(); }); }
+  const grid = document.getElementById("routes-list");
+  const searchInput = document.getElementById("route-search");
+  const filterBtns = document.querySelectorAll("[data-filter]");
+  let activeFilter = "all",
+    searchTerm = "";
+
+  const showRoutes = () => {
+    const filtered = routes.filter(
+      (r) =>
+        (activeFilter === "all" || r.difficulty === activeFilter) &&
+        (r.name.toLowerCase().includes(searchTerm) ||
+          r.region.toLowerCase().includes(searchTerm)),
+    );
+    grid.innerHTML = filtered.length
+      ? filtered.map(buildCard).join("")
+      : '<p class="placeholder-text">No routes found.</p>';
+  };
+
+  filterBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      activeFilter = btn.dataset.filter;
+      showRoutes();
+    }),
+  );
+
+  if (searchInput)
+    searchInput.addEventListener("input", (e) => {
+      searchTerm = e.target.value.toLowerCase();
+      showRoutes();
+    });
   showRoutes();
 }
+
 function initContactForm() {
-  var form = document.getElementById('contact-block'); if (!form) return; function showError(fieldId, message) { var field = document.getElementById(fieldId); var error = document.getElementById(fieldId + '-error'); if (field) field.classList.add('has-error'); if (error) { error.textContent = message; error.style.display = 'block'; } } function clearError(fieldId) { var field = document.getElementById(fieldId); var error = document.getElementById(fieldId + '-error'); if (field) field.classList.remove('has-error'); if (error) error.style.display = 'none'; }
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();['contact-name', 'contact-email', 'contact-phone', 'contact-route', 'contact-experience', 'message-box'].forEach(clearError);
-    var name = document.getElementById('contact-name').value.trim(); var email = document.getElementById('contact-email').value.trim(); var phone = document.getElementById('contact-phone').value.trim(); var route = document.getElementById('contact-route').value; var experience = document.getElementById('contact-experience').value; var message = document.getElementById('message-box').value.trim(); var isValid = true;
-    if (name.length < 2) { showError('contact-name', 'Please enter your full name.'); isValid = false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('contact-email', 'Enter a valid email address.'); isValid = false; }
-    if (!/^\+?[0-9\s\-]{7,15}$/.test(phone)) { showError('contact-phone', 'Enter a valid phone number.'); isValid = false; }
-    if (!route) { showError('contact-route', 'Please select a trekking route.'); isValid = false; }
-    if (!experience) { showError('contact-experience', 'Please select your experience level.'); isValid = false; }
-    if (message.length < 10) { showError('message-box', 'Please write a brief message.'); isValid = false; }
-    if (!isValid) return; var submitBtn = form.querySelector('button[type="submit"]'); submitBtn.textContent = 'Enquiry sent'; submitBtn.style.backgroundColor = '#2d6a4f'; form.reset(); setTimeout(function () { submitBtn.textContent = 'Send enquiry'; submitBtn.style.backgroundColor = ''; }, 3500);
+  const form = document.getElementById("contact-block");
+  if (!form) return;
+
+  const fields = [
+    "contact-name",
+    "contact-email",
+    "contact-phone",
+    "contact-route",
+    "contact-experience",
+    "message-box",
+  ];
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    fields.forEach((id) => {
+      const el = document.getElementById(id);
+      const err = document.getElementById(`${id}-error`);
+      el.classList.remove("has-error");
+      if (err) err.style.display = "none";
+
+      if (
+        !el.value.trim() ||
+        (id === "contact-email" && !el.value.includes("@")) ||
+        (id === "message-box" && el.value.length < 10)
+      ) {
+        el.classList.add("has-error");
+        if (err) err.style.display = "block";
+        isValid = false;
+      }
+    });
+
+    if (isValid) {
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = "Message sent";
+      btn.style.backgroundColor = "#2d6a4f";
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.backgroundColor = "";
+      }, 3500);
+    }
   });
 }
-function getGalleryImage(caption) {
-  var map = {
-    'Everest Base Camp': 'asset/EverestBaseCamp.jpg',
-    'Tengboche Monastery': 'asset/TengbocheMonastery.png',
-    'Khumbu Glacier': 'asset/KhumbuGlacier.jpg',
-    'Poon Hill at sunrise': 'asset/PoonHillSunrise.jpg',
-    'Annapurna Circuit': 'asset/AnnapurnaCircuitTrek.jpg',
-    'Machhapuchhre (Fishtail)': 'asset/Machhapuchchhre.jpg',
-    'Langtang Valley': 'asset/LangtangValley.jpg',
-    'Gosaikunda Lake': 'asset/GosaikundaLake.jpg',
-    'Lo Manthang': 'asset/LoMantang.jpg',
-    'Mustang red cliffs': 'asset/LoMustang.webp',
-    'Kanchenjunga Base Camp': 'asset/KanchenjuungaBaseCamp.jpg',
-    'Eastern Nepal forests': 'asset/LoMantang.jpg'
-  }; return map[caption] || 'asset/Logo.jpg';
+
+const buildGalleryCard = (item) => `
+    <article class="photo-item" data-region="${item.region}">
+        <div class="photo-img" style="background-image:url('${item.img || "asset/Logo.svg"}')"></div>
+        <div class="photo-info">
+            <span class="tag tag-area">${item.region}</span>
+            <h3 class="photo-name">${item.title}</h3>
+            ${item.note ? `<p class="photo-text">${item.note}</p>` : ""}
+        </div>
+    </article>`;
+
+function initGalleryPage(items) {
+  const grid = document.getElementById("gallery-grid");
+  const toolbar = document.getElementById("gallery-toolbar");
+  if (!grid) return;
+
+  let activeRegion = "all";
+
+  const render = () => {
+    const filtered = items.filter(
+      (i) => activeRegion === "all" || i.region === activeRegion,
+    );
+    grid.innerHTML = filtered.length
+      ? filtered.map(buildGalleryCard).join("")
+      : '<p class="placeholder-text">No photos found.</p>';
+  };
+
+  if (toolbar) {
+    const regions = ["all", ...new Set(items.map((i) => i.region))].sort();
+    toolbar.innerHTML = regions
+      .map(
+        (r) =>
+          `<button class="filter-btn ${r === "all" ? "active" : ""}" data-region="${r}">${r === "all" ? "All regions" : r}</button>`,
+      )
+      .join("");
+    toolbar.querySelectorAll(".filter-btn").forEach((btn) =>
+      btn.addEventListener("click", () => {
+        toolbar
+          .querySelectorAll(".filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        activeRegion = btn.dataset.region;
+        render();
+      }),
+    );
+  }
+  render();
 }
-function initGallery() { var items = document.querySelectorAll('.media-card'); items.forEach(function (item) { var caption = item.querySelector('.media-caption').textContent; item.style.backgroundImage = 'url("' + getGalleryImage(caption) + '")'; item.addEventListener('click', function () { var overlay = document.createElement('div'); overlay.style.cssText = 'position:fixed; inset:0; background:rgba(28,26,23,0.88); z-index:999; display:flex; align-items:center; justify-content:center; padding:20px; cursor:pointer;'; overlay.innerHTML = '<div style="max-width:640px; color:white; font-size:1.1rem; text-align:center;">' + caption + '</div>'; overlay.addEventListener('click', function () { overlay.remove(); }); document.body.appendChild(overlay); }); }); }
+
+function initCompareButtonState() {
+  const btn = document.getElementById("compare-action");
+  if (!btn) return;
+  const selects = ["pick-one", "pick-two", "pick-three"]
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+  const update = () => {
+    const count = selects.filter((s) => s.value).length;
+    btn.disabled = count < 2;
+    btn.classList.toggle("btn-disabled", count < 2);
+  };
+  selects.forEach((s) => s.addEventListener("change", update));
+  update();
+}
+
+function initBackToTop() {
+  const btn = document.getElementById("back-to-top");
+  if (!btn) return;
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("show", window.scrollY > 300);
+  });
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+function initProfilePage() {
+  getRoutes(function (routes) {
+    // Mock saved routes (ID 2, 7, 8)
+    var savedIds = [2, 7, 8];
+    var saved = routes.filter(function (r) {
+      return savedIds.includes(r.id);
+    });
+
+    var grid = document.getElementById("saved-routes-grid");
+    if (grid) {
+      if (saved.length > 0) {
+        grid.innerHTML = saved.map(buildCard).join("");
+      } else {
+        grid.innerHTML =
+          '<p class="placeholder-text">You haven\'t saved any routes yet.</p>';
+      }
+    }
+  });
+
+  // Handle settings form
+  var settingsForm = document.getElementById("profile-settings-form");
+  var successPanel = document.getElementById("settings-success");
+
+  if (settingsForm) {
+    settingsForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = settingsForm.querySelector("button");
+      btn.disabled = true;
+      btn.textContent = "Updating...";
+
+      setTimeout(function () {
+        if (successPanel) successPanel.style.display = "flex";
+        btn.disabled = false;
+        btn.textContent = "Update Profile";
+        setTimeout(function () {
+          if (successPanel) successPanel.style.display = "none";
+        }, 3000);
+      }, 800);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initCompareButtonState();
+});
