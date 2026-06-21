@@ -210,7 +210,7 @@ function initBackToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
-
+//STATIC USER DATA 
 const DEFAULT_USER = {
   name: "Shahisha Adhikari",
   email: "shahisha123adh@gmail.com",
@@ -225,20 +225,22 @@ const DEFAULT_USER = {
   topRegion: "Annapurna",
 };
 
+//PROFILE PAGE
+
 function initProfilePage() {
   let user = JSON.parse(localStorage.getItem("trekUser")) || DEFAULT_USER;
 
   const render = () => {
-    // Header
+    
     const nameDisplay = document.getElementById("profile-name-display");
     const subDisplay = document.getElementById("profile-sub-display");
     const avatarDisplay = document.getElementById("profile-avatar-display");
     if (nameDisplay) nameDisplay.textContent = user.name;
     if (subDisplay)
-      subDisplay.innerHTML = `${user.level} &middot; Joined ${user.joined}`;
+      subDisplay.innerHTML = `${user.level}. Joined ${user.joined}`;
     if (avatarDisplay) avatarDisplay.textContent = user.name.charAt(0);
 
-    // Stats
+    
     const savedCount = document.getElementById("stat-saved-count");
     const enquiryCount = document.getElementById("stat-enquiry-count");
     const topRegion = document.getElementById("stat-top-region");
@@ -246,13 +248,13 @@ function initProfilePage() {
     if (enquiryCount) enquiryCount.textContent = user.enquiries.length;
     if (topRegion) topRegion.textContent = user.topRegion;
 
-    // Settings Inputs
+
+
     const nameInput = document.getElementById("profile-name");
     const emailInput = document.getElementById("profile-email");
     if (nameInput) nameInput.value = user.name;
     if (emailInput) emailInput.value = user.email;
 
-    // Saved Routes Grid
     getRoutes(function (routes) {
       const saved = routes.filter((r) => user.savedIds.includes(r.id));
       const grid = document.getElementById("saved-routes-grid");
@@ -263,7 +265,6 @@ function initProfilePage() {
       }
     });
 
-    // Enquiries List
     const enquiryContainer = document.getElementById("enquiry-list-container");
     if (enquiryContainer) {
       enquiryContainer.innerHTML = user.enquiries
@@ -283,38 +284,7 @@ function initProfilePage() {
   };
 
   render();
-
-  // Handle settings form
-  var settingsForm = document.getElementById("profile-settings-form");
-  var successPanel = document.getElementById("settings-success");
-
-  if (settingsForm) {
-    settingsForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const newName = document.getElementById("profile-name").value;
-      const newEmail = document.getElementById("profile-email").value;
-
-      user.name = newName;
-      user.email = newEmail;
-      localStorage.setItem("trekUser", JSON.stringify(user));
-
-      var btn = settingsForm.querySelector("button");
-      btn.disabled = true;
-      btn.textContent = "Updating...";
-
-      setTimeout(function () {
-        render();
-        if (successPanel) successPanel.style.display = "flex";
-        btn.disabled = false;
-        btn.textContent = "Update Profile";
-        setTimeout(function () {
-          if (successPanel) successPanel.style.display = "none";
-        }, 3000);
-      }, 800);
-    });
-  }
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   initCompareButtonState();
 });

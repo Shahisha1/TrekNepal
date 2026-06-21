@@ -1,181 +1,161 @@
 ﻿<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign In - TrekNepal</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
 
-    <body>
-        <nav class="header-nav">
-            <div class="logo-text">TrekNepal</div>
-            <ul class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="routes.html">Routes</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="compare.html">Compare</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="outline-btn small-btn active"
-                    >Sign In</a
-                >
-                <a href="signup.html" class="main-btn small-btn">Sign Up</a>
-            </div>
-            <button class="mobile-menu-btn">Menu</button>
-        </nav> 
-        <div class="auth-page">
-            <div class="auth-box">
-                <div class="auth-logo">TrekNepal</div>
-                <h1 class="auth-title">Sign in</h1>
-                <p class="auth-sub">
-                    No account yet? <a href="signup.html">Create one</a>
-                </p>
-                <div class="success-panel" id="login-success">
-                    Signed in. This demo does not connect to a server.
-                </div>
-                <form id="login-block" novalidate>
-                    <div class="form-field">
-                        <label class="field-label" for="login-email"
-                            >Email</label
-                        >
-                        <input
-                            class="field-input"
-                            type="email"
-                            id="login-email"
-                            placeholder="name@email.com"
-                            autocomplete="email"
-                        />
-                        <div class="error-text" id="login-email-error"></div>
-                    </div>
-                    <div class="form-field">
-                        <label class="field-label" for="login-password"
-                            >Password</label
-                        >
-                        <div class="input-wrap">
-                            <input
-                                class="field-input"
-                                type="password"
-                                id="login-password"
-                                placeholder="Password"
-                                autocomplete="current-password"
-                            />
-                            <button
-                                type="button"
-                                class="pw-toggle"
-                                id="login-toggle-pw"
-                            >
-                                Show
-                            </button>
-                        </div>
-                        <div class="error-text" id="login-password-error"></div>
-                    </div>
-                    <div class="form-row">
-                        <label
-                            ><input type="checkbox" id="remember-me" /> Keep me
-                            signed in</label
-                        >
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <button type="submit" class="main-btn wide-btn">
-                        Sign in
-                    </button>
-                </form>
-            </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In - TrekNepal</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="header-nav">
+        <div class="logo-text">TrekNepal</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html" class="outline-btn small-btn active">Sign In</a>
+            <a href="signup.html" class="main-btn small-btn">Sign Up</a>
         </div>
-        <script src="js/main.js"></script>
-        <script>
-            var loginPw = document.getElementById("login-password");
-            var loginToggle = document.getElementById("login-toggle-pw");
+        <button class="mobile-menu-btn">Menu</button>
+    </nav>
+    <div class="auth-page">
+        <div class="auth-box">
+            <div class="auth-logo">TrekNepal</div>
+            <h1 class="auth-title">Sign in</h1>
+            <p class="auth-sub">
+                No account yet? <a href="signup.html">Create one</a>
+            </p>
+            <div class="success-panel" id="login-success">
+                Signed in. This demo does not connect to a server.
+            </div>
+            <form id="login-block" novalidate>
+                <div class="form-field">
+                    <label class="field-label" for="login-email">Email</label>
+                    <input class="field-input" type="email" id="login-email" placeholder="name@email.com"
+                        autocomplete="email" />
+                    <div class="error-text" id="login-email-error"></div>
+                </div>
+                <div class="form-field">
+                    <label class="field-label" for="login-password">Password</label>
+                    <div class="input-wrap">
+                        <input class="field-input" type="password" id="login-password" placeholder="Password"
+                            autocomplete="current-password" />
+                        <button type="button" class="pw-toggle" id="login-toggle-pw">
+                            Show
+                        </button>
+                    </div>
+                    <div class="error-text" id="login-password-error"></div>
+                </div>
+                <div class="form-row">
+                    <label><input type="checkbox" id="remember-me" /> Keep me
+                        signed in</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="main-btn wide-btn">
+                    Sign in
+                </button>
+            </form>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script>
+        var loginPw = document.getElementById("login-password");
+        var loginToggle = document.getElementById("login-toggle-pw");
 
-            loginToggle.addEventListener("click", function () {
-                if (loginPw.type === "password") {
-                    loginPw.type = "text";
-                    loginToggle.textContent = "Hide";
-                } else {
-                    loginPw.type = "password";
-                    loginToggle.textContent = "Show";
+        loginToggle.addEventListener("click", function () {
+            if (loginPw.type === "password") {
+                loginPw.type = "text";
+                loginToggle.textContent = "Hide";
+            } else {
+                loginPw.type = "password";
+                loginToggle.textContent = "Show";
+            }
+        });
+
+        function showError(id, msg) {
+            var field = document.getElementById(id);
+            var error = document.getElementById(id + "-error");
+            if (field) field.classList.add("has-error");
+            if (error) {
+                error.textContent = msg;
+                error.style.display = "block";
+            }
+        }
+
+        function clearError(id) {
+            var field = document.getElementById(id);
+            var error = document.getElementById(id + "-error");
+            if (field) field.classList.remove("has-error");
+            if (error) error.style.display = "none";
+        }
+
+        document
+            .getElementById("login-block")
+            .addEventListener("submit", function (e) {
+                e.preventDefault();
+                clearError("login-email");
+                clearError("login-password");
+
+                var email = document
+                    .getElementById("login-email")
+                    .value.trim();
+                var password =
+                    document.getElementById("login-password").value;
+                var ok = true;
+
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showError(
+                        "login-email",
+                        "Enter a valid email address.",
+                    );
+                    ok = false;
                 }
+                if (password.length < 6) {
+                    showError(
+                        "login-password",
+                        "Password must be at least 6 characters.",
+                    );
+                    ok = false;
+                }
+                if (!ok) return;
+
+                var btn = document.querySelector(
+                    '#login-block button[type="submit"]',
+                );
+                btn.textContent = "Signing in...";
+                btn.disabled = true;
+
+                setTimeout(function () {
+                    document.getElementById("login-success").style.display =
+                        "flex";
+                    btn.textContent = "Signed in";
+                    btn.style.backgroundColor = "#2d6a4f";
+
+                    // Redirect to profile page after a short delay
+                    setTimeout(function () {
+                        window.location.href = "profile.html";
+                    }, 500);
+                }, 900);
             });
 
-            function showError(id, msg) {
-                var field = document.getElementById(id);
-                var error = document.getElementById(id + "-error");
-                if (field) field.classList.add("has-error");
-                if (error) {
-                    error.textContent = msg;
-                    error.style.display = "block";
-                }
-            }
+        document
+            .getElementById("login-email")
+            .addEventListener("input", function () {
+                clearError("login-email");
+            });
+        document
+            .getElementById("login-password")
+            .addEventListener("input", function () {
+                clearError("login-password");
+            });
+    </script>
+</body>
 
-            function clearError(id) {
-                var field = document.getElementById(id);
-                var error = document.getElementById(id + "-error");
-                if (field) field.classList.remove("has-error");
-                if (error) error.style.display = "none";
-            }
-
-            document
-                .getElementById("login-block")
-                .addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    clearError("login-email");
-                    clearError("login-password");
-
-                    var email = document
-                        .getElementById("login-email")
-                        .value.trim();
-                    var password =
-                        document.getElementById("login-password").value;
-                    var ok = true;
-
-                    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                        showError(
-                            "login-email",
-                            "Enter a valid email address.",
-                        );
-                        ok = false;
-                    }
-                    if (password.length < 6) {
-                        showError(
-                            "login-password",
-                            "Password must be at least 6 characters.",
-                        );
-                        ok = false;
-                    }
-                    if (!ok) return;
-
-                    var btn = document.querySelector(
-                        '#login-block button[type="submit"]',
-                    );
-                    btn.textContent = "Signing in...";
-                    btn.disabled = true;
-
-                    setTimeout(function () {
-                        document.getElementById("login-success").style.display =
-                            "flex";
-                        btn.textContent = "Signed in";
-                        btn.style.backgroundColor = "#2d6a4f";
-
-                        // Redirect to profile page after a short delay
-                        setTimeout(function () {
-                            window.location.href = "profile.html";
-                        }, 500);
-                    }, 900);
-                });
-
-            document
-                .getElementById("login-email")
-                .addEventListener("input", function () {
-                    clearError("login-email");
-                });
-            document
-                .getElementById("login-password")
-                .addEventListener("input", function () {
-                    clearError("login-password");
-                });
-        </script>
-    </body>
 </html>

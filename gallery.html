@@ -1,62 +1,60 @@
 ﻿<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Gallery - TrekNepal</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
 
-    <body>
-        <nav class="header-nav">
-            <div class="logo-text">TrekNepal</div>
-            <ul class="nav-items">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="routes.html">Routes</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="compare.html">Compare</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="my-button outline-btn small-btn"
-                    >Sign In</a
-                >
-                <a href="signup.html" class="my-button main-btn small-btn"
-                    >Sign Up</a
-                >
-            </div>
-            <button class="mobile-menu-btn">Menu</button>
-        </nav>
-        <div class="section-part">
-            <div class="container">
-                <h1>Trail gallery</h1>
-                <p>Photos from the regions covered on this site.</p>
-                <div class="filter-bar" id="gallery-toolbar"></div>
-                <div class="photo-grid" id="gallery-grid">
-                    <p class="placeholder-text">Loading...</p>
-                </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - TrekNepal</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="header-nav">
+        <div class="logo-text">TrekNepal</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html" class="my-button outline-btn small-btn">Sign In</a>
+            <a href="signup.html" class="my-button main-btn small-btn">Sign Up</a>
+        </div>
+        <button class="mobile-menu-btn">Menu</button>
+    </nav>
+    <div class="section-part">
+        <div class="container">
+            <h1>Trail gallery</h1>
+            <p>Photos from the regions covered on this site.</p>
+            <div class="filter-bar" id="gallery-toolbar"></div>
+            <div class="photo-grid" id="gallery-grid">
+                <p class="placeholder-text">Loading...</p>
             </div>
         </div>
-        <footer> 
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">TrekNepal</div>
-                    <p class="footer-desc">
-                        A student project from Pokhara University, Faculty of
-                        Management Studies.
-                    </p>
-                </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">TrekNepal</div>
+                <p class="footer-desc">
+                    A student project from Pokhara University, Faculty of
+                    Management Studies.
+                </p>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 TrekNepal &middot; Pokhara University
-            </div>
-        </footer>
-        <script src="js/main.js"></script>
-        <script>
-            getGallery(function (items) {
-                initGalleryPage(items);
-            });
-        </script>
-    </body>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 TrekNepal. Pokhara University
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        getGallery(function (items) {
+            initGalleryPage(items);
+        });
+    </script>
+</body>
+
 </html>

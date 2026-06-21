@@ -1,148 +1,99 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Profile - TrekNepal</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
 
-    <body>
-        <nav class="header-nav">
-            <div class="logo-text">TrekNepal</div>
-            <ul class="nav-items"> 
-                <li><a href="index.html">Home</a></li>
-                <li><a href="routes.html">Routes</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="compare.html">Compare</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html" class="active">Profile</a></li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="outline-btn small-btn">Sign Out</a>
-            </div>
-            <button class="mobile-menu-btn">Menu</button>
-        </nav>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - TrekNepal</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
 
-        <header class="profile-header">
-            <div class="container">
-                <div class="profile-info">
-                    <div class="profile-avatar" id="profile-avatar-display">
-                        S
-                    </div>
-                    <div class="profile-details">
-                        <h1 id="profile-name-display">Shahisha Adhikari</h1>
-                        <p id="profile-sub-display">
-                            Intermediate Trekker &middot; Joined June 2025
-                        </p>
-                    </div>
+<body>
+    <nav class="header-nav">
+        <div class="logo-text">TrekNepal</div>
+        <ul class="nav-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html" class="outline-btn small-btn">Sign Out</a>
+        </div>
+        <button class="mobile-menu-btn">Menu</button>
+    </nav>
+
+    <header class="profile-header">
+        <div class="container">
+            <div class="profile-info">
+                <div class="profile-avatar" id="profile-avatar-display">
+                    S
                 </div>
-            </div>
-        </header>
-
-        <main class="container">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <span class="stat-val" id="stat-saved-count">3</span>
-                    <span class="stat-lbl">Saved Treks</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-val" id="stat-enquiry-count">12</span>
-                    <span class="stat-lbl">Enquiries</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-val" id="stat-top-region">Annapurna</span>
-                    <span class="stat-lbl">Top Region</span>
-                </div>
-            </div>
-
-            <section class="profile-section">
-                <h2>My Saved Routes</h2>
-                <div class="grid-view" id="saved-routes-grid">
-                    <!--js loaded-->
-                    <p class="placeholder-text">Loading saved routes...</p>
-                </div>
-            </section>
-
-            <div class="two-columns">
-                <section class="profile-section">
-                    <h2>Recent Enquiries</h2>
-                    <div class="enquiry-list" id="enquiry-list-container">
-                        <!-- Loaded via JS -->
-                    </div>
-                </section>
-
-                <section class="profile-section">
-                    <h2>Account Settings</h2>
-                    <div class="contact-form-box" style="margin-bottom: 0">
-                        <form id="profile-settings-form" novalidate>
-                            <div class="form-field">
-                                <label class="field-label" for="profile-name"
-                                    >Full Name</label
-                                >
-                                <input
-                                    class="field-input"
-                                    type="text"
-                                    id="profile-name"
-                                    value="Shahisha Adhikari"
-                                />
-                            </div>
-                            <div class="form-field">
-                                <label class="field-label" for="profile-email"
-                                    >Email Address</label
-                                >
-                                <input
-                                    class="field-input"
-                                    type="email"
-                                    id="profile-email"
-                                    value="shahisha123adh@gmail.com"
-                                />
-                            </div>
-                            <div class="form-field">
-                                <label class="field-label" for="profile-pass"
-                                    >New Password</label
-                                >
-                                <input
-                                    class="field-input"
-                                    type="password"
-                                    id="profile-pass"
-                                    placeholder="Leave blank to keep current"
-                                />
-                            </div>
-                            <div
-                                class="success-panel"
-                                id="settings-success"
-                                style="margin-top: 0; margin-bottom: 20px"
-                            >
-                                Settings updated successfully.
-                            </div>
-                            <button type="submit" class="main-btn wide-btn">
-                                Update Profile
-                            </button>
-                        </form>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">TrekNepal</div>
-                    <p class="footer-desc">
-                        A student project from Pokhara University, Faculty of
-                        Management Studies.
+                <div class="profile-details">
+                    <h1 id="profile-name-display">Shahisha Adhikari</h1>
+                    <p id="profile-sub-display">
+                        Intermediate Trekker. Joined June 2025
                     </p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 TrekNepal &middot; Pokhara University
-            </div>
-        </footer>
+        </div>
+    </header>
 
-        <script src="js/main.js"></script>
-        <script>
-            initProfilePage();
-        </script>
-    </body>
+    <main class="container">
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-val" id="stat-saved-count">3</span>
+                <span class="stat-lbl">Saved Treks</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-val" id="stat-enquiry-count">12</span>
+                <span class="stat-lbl">Enquiries</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-val" id="stat-top-region">Annapurna</span>
+                <span class="stat-lbl">Top Region</span>
+            </div>
+        </div>
+
+        <section class="profile-section">
+            <h2>My Saved Routes</h2>
+            <div class="grid-view" id="saved-routes-grid">
+                <!--loaded usingf JS-->
+                <p class="placeholder-text">Loading saved routes...</p>
+            </div>
+        </section>
+
+        <div class="two-columns">
+            <section class="profile-section">
+                <h2>Recent Enquiries</h2>
+                <div class="enquiry-list" id="enquiry-list-container">
+                    <!-- Loaded throughh JS -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">TrekNepal</div>
+                <p class="footer-desc">
+                    A student project from Pokhara University, Faculty of
+                    Management Studies.
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 TrekNepal . Pokhara University
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        initProfilePage();
+    </script>
+</body>
+
 </html>

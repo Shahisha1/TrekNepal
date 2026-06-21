@@ -1,140 +1,149 @@
 ﻿<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>TrekNepal- Himalayan Route Planner</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
 
-    <body>
-        <nav class="header-nav">
-            <div class="logo-text">TrekNepal</div>
-            <ul class="nav-items">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="routes.html">Routes</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="compare.html">Compare</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="profile.html">Profile</a></li>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TrekNepal- Himalayan Route Planner</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="header-nav">
+        <div class="logo-text">TrekNepal</div>
+        <ul class="nav-items">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="routes.html">Routes</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="compare.html">Compare</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="login.html" class="my-button outline-btn small-btn">Sign In</a>
+            <a href="signup.html" class="my-button main-btn small-btn">Sign Up</a>
+        </div>
+        <button class="mobile-menu-btn">Menu</button>
+    </nav>
+    <div class="image-slider">
+        <div class="slide active"><img src="asset/EverestBaseCamp.jpg" alt="Everest Base Camp" /></div>
+        <div class="slide"><img src="asset/AnnapurnaCircuitTrek.jpg" alt="Annapurna Circuit Trek" /></div>
+        <div class="slide"><img src="asset/ManasluTrek.jpg" alt="Manaslu Trek" /></div>
+        <div class="slide"><img src="asset/LoMantang.jpg" alt="Lo Mantang" /></div>
+        <div class="slide"><img src="asset/MardiHimal.jpg" alt="Mardi Himal" /></div>
+        <div class="intro-words">
+            <h1>Planning a trek<br />in <em>Nepal?</em><br />Start here.</h1>
+            <p>We built this for our coursework — browse routes, compare a few side by side, and send a message if you
+                want help choosing.</p>
+            <div class="intro-links">
+                <a href="routes.html" class="my-button main-btn">Browse Routes</a>
+                <a href="compare.html" class="my-button transparent-button">Compare Side by Side</a>
+            </div>
+        </div>
+    </div>
+    <div class="stats-bar">
+        <div class="stat-item">
+            <div class="stat-num">8848m</div>
+            <div class="stat-label">Height of Mount Everest</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Curated routes, 5 regions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">2</div>
+            <div class="stat-label">Trekking windows per year</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Difficulty levels</div>
+        </div>
+    </div>
+    <section class="section-part">
+        <div class="container">
+            <h2>Featured routes</h2>
+            <p>Four treks we picked to show on the home page.</p>
+            <div class="grid-view" id="featured-grid">
+                <p class="placeholder-text">Loading...</p>
+            </div>
+            <p>
+                <a href="routes.html" class="my-button outline-btn">See all routes</a>
+            </p>
+        </div>
+    </section>
+    <div class="about-box">
+        <div>
+            <h2>Why we built this</h2>
+            <p>
+                When we started researching treks, the info was scattered —
+                permits in one place, seasons somewhere else, altitude notes
+                in a forum post.
+            </p>
+            <p>
+                TrekNepal puts the basics together. It does not book trips;
+                it helps you narrow down a route before you talk to an
+                agency.
+            </p>
+            <ul class="about-bullets">
+                <li>Filter routes by difficulty and region</li>
+                <li>Compare up to 3 routes side by side</li>
+                <li>See permit requirements upfront</li>
+                <li>Send an enquiry and get a reply</li>
             </ul>
-            <div class="auth-buttons">
-                <a href="login.html" class="my-button outline-btn small-btn"
-                    >Sign In</a
-                > 
-                <a href="signup.html" class="my-button main-btn small-btn"
-                    >Sign Up</a
-                >
-            </div>
-            <button class="mobile-menu-btn">Menu</button>
-        </nav>
-        <div class="welcome-box plain-intro">
-            <div class="intro-words">
-                <h1>
-                    Planning a trek<br />in <em>Nepal?</em><br />Start here.
-                </h1>
-                <p>
-                    We built this for our coursework — browse routes, compare a
-                    few side by side, and send a message if you want help
-                    choosing.
-                </p>
-                <div class="intro-links">
-                    <a href="routes.html" class="my-button main-btn"
-                        >Browse Routes</a
-                    >
-                    <a href="compare.html" class="my-button outline-btn"
-                        >Compare Side by Side</a
-                    >
-                </div>
-            </div>
         </div>
-        <div class="stats-bar">
-            <div class="stat-item">
-                <div class="stat-num">8848m</div>
-                <div class="stat-label">Height of Mount Everest</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">10+</div>
-                <div class="stat-label">Curated routes, 5 regions</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">2</div>
-                <div class="stat-label">Trekking windows per year</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">4</div>
-                <div class="stat-label">Difficulty levels</div>
-            </div>
-        </div>
-        <section class="section-part">
-            <div class="container">
-                <h2>Featured routes</h2>
-                <p>Four treks we picked to show on the home page.</p>
-                <div class="grid-view" id="featured-grid">
-                    <p class="placeholder-text">Loading...</p>
-                </div>
-                <p>
-                    <a href="routes.html" class="my-button outline-btn"
-                        >See all routes</a
-                    >
-                </p>
-            </div>
-        </section>
-        <div class="about-box">
+        <img src="asset/index-footer.jpg" alt="Trekking in Nepal" height="300px" width="auto" />
+    </div>
+    <footer>
+        <div class="footer-content">
             <div>
-                <h2>Why we built this</h2>
-                <p>
-                    When we started researching treks, the info was scattered —
-                    permits in one place, seasons somewhere else, altitude notes
-                    in a forum post.
+                <div class="footer-logo">TrekNepal</div>
+                <p class="footer-desc">
+                    A student project from Pokhara University, Faculty of
+                    Management Studies.
                 </p>
-                <p>
-                    TrekNepal puts the basics together. It does not book trips;
-                    it helps you narrow down a route before you talk to an
-                    agency.
-                </p>
-                <ul class="about-bullets">
-                    <li>Filter routes by difficulty and region</li>
-                    <li>Compare up to 3 routes side by side</li>
-                    <li>See permit requirements upfront</li>
-                    <li>Send an enquiry and get a reply</li>
-                </ul>
             </div>
-            <img
-                src="asset/index-footer.jpg"
-                alt="Trekking in Nepal"
-                height="500"
-                width="auto"
-            />
         </div>
-        <footer>
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo">TrekNepal</div>
-                    <p class="footer-desc">
-                        A student project from Pokhara University, Faculty of
-                        Management Studies.
-                    </p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2025 TrekNepal &middot; Pokhara University
-            </div>
-        </footer>
-        <button id="back-to-top" class="top-button" aria-label="Back to top">
-            ↑
-        </button>
-        <script src="js/main.js"></script>
-        <script>
-            getRoutes(function (routes) {
-                var picks = routes.filter(function (r) {
-                    return r.id === 1 || r.id === 2 || r.id === 4 || r.id === 6;
-                });
-                document.getElementById("featured-grid").innerHTML = picks
-                    .map(buildCard)
-                    .join("");
+        <div class="footer-bottom">
+            &copy; 2025 TrekNepal. Pokhara University
+        </div>
+    </footer>
+    <button id="back-to-top" class="top-button" aria-label="Back to top">
+        ↑
+    </button>
+    <script src="js/main.js"></script>
+    <script>
+        var slides = document.querySelectorAll(".image-slider .slide");
+        var current = 0;
+
+        setInterval(function () {
+            slides[current].classList.remove("active");
+            current = (current + 1) % slides.length;
+            slides[current].classList.add("active");
+        }, 4000);
+
+        getRoutes(function (routes) {
+            var picks = routes.filter(function (r) {
+                return r.id === 1 || r.id === 2 || r.id === 4 || r.id === 6;
             });
-            initBackToTop();
-        </script>
-    </body>
+            document.getElementById("featured-grid").innerHTML = picks
+                .map(buildCard)
+                .join("");
+        });
+
+        var backToTopBtn = document.getElementById("back-to-top");
+        if (backToTopBtn) {
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add("show");
+                } else {
+                    backToTopBtn.classList.remove("show");
+                }
+            });
+            backToTopBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        }
+    </script>
+</body>
+
 </html>

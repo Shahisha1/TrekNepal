@@ -182,19 +182,19 @@
                     </div>
                     <div id="signup-step2" style="display: none">
                         <div class="form-field">
-                            <label class="field-label" for="signup-country"
-                                >Where are you from?</label
-                            >
-                            <input
-                                class="field-input"
-                                type="text"
-                                id="signup-country"
-                                placeholder="Country"
-                            />
+                            <label class="field-label" for="signup-country">Where are you from?</label>
+                            <select class="field-select" id="signup-country">
+                                <option value="">Select a country</option>
+                                <option value="Nepal">Nepal</option>
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="UK">UK</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div> 
                         <div class="form-field">
                             <label class="field-label" for="signup-experience"
-                                >Trekking experience *</label
+                                >Trekking experience <span style="color: red">*</span></label
                             >
                             <select class="field-select" id="signup-experience">
                                 <option value="">Select experience</option>
@@ -255,7 +255,7 @@
                             >
                         </div>
                         <div class="error-text" id="signup-terms-error"></div>
-                        <div class="two-columns" style="gap: 12px">
+                        <div class="two-columns" style="gap: 19px">
                             <button
                                 type="button"
                                 class="outline-btn"
@@ -263,7 +263,7 @@
                             >
                                 Back
                             </button>
-                            <button
+                            <button size="large" height="50px" width="100%"
                                 type="submit"
                                 class="main-btn"
                                 id="signup-submit"
