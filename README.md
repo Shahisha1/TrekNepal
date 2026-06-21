@@ -3,7 +3,7 @@
 This is a web project I built for my coursework at the Faculty of Management Studies, Pokhara University. It's a simple platform to help people check out different trekking routes in Nepal, compare them, and get a feel for what each trail offers.
 This was made following the guidelines provided by PU for Project I.
 ## HomePage Preview 
-<img width="1918" height="908" alt="image" src="https://github.com/user-attachments/assets/63057edd-6412-4749-90eb-7979b0d49397" />
+<img width="1918" height="908" alt="homepage preview pre-image slider" src="https://github.com/user-attachments/assets/63057edd-6412-4749-90eb-7979b0d49397" />
 
 
 ## What it does
