@@ -29,4 +29,4 @@ I kept things pretty simple and used:
 *   `/data`: The JSON file where all the trek data lives.
 *   `/js`: The main logic script.
 *   `/pages`: The rest of the pages of the project.
-*   The root folder contains all the HTML pages (`index`, `routes`, `gallery`, `compare`, `profile`, etc.).
+*   The root folder contains all the HTML `index.html` and the `README.md` file.
