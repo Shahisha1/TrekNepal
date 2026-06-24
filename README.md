@@ -26,7 +26,7 @@ I kept things pretty simple and used:
 
 *   `/asset`: Images for the routes and site UI.
 *   `/css`: The main stylesheet.
-*   `/data`: The JSON file where all the trek data lives.
+*   `/data`: The JSON file where all the trek data is stored.
 *   `/js`: The main logic script.
 *   `/pages`: The rest of the pages of the project.
 *   The root folder contains all the HTML `index.html` and the `README.md` file.
