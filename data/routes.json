@@ -14,11 +14,6 @@
         "title": "Everest Base Camp",
         "img": "asset/EverestBaseCamp.jpg",
         "note": "Right at the bottom of the world's tallest mountain."
-      },
-      {
-        "title": "Tengboche Monastery",
-        "img": "asset/TengbocheMonastery.png",
-        "note": "A beautiful monastery along the way."
       }
     ]
   },
@@ -37,11 +32,6 @@
         "title": "Thorong La Pass",
         "img": "asset/AnnapurnaCircuitTrek.jpg",
         "note": "The highest point of the trek."
-      },
-      {
-        "title": "Annapurna Range",
-        "img": "asset/PoonHillSunrise.jpg",
-        "note": "Watching the sun come up over the peaks."
       }
     ]
   },
@@ -108,11 +98,6 @@
         "title": "Lo Manthang",
         "img": "asset/LoMantang.jpg",
         "note": "The ancient capital."
-      },
-      {
-        "title": "Mustang Cliffs",
-        "img": "asset/LoMustang.webp",
-        "note": "Eroded cliffs in the rain shadow."
       }
     ]
   },
@@ -180,6 +165,12 @@
     "bestSeason": "Oct–Apr",
     "img": "asset/KhopraRidge.jpg",
     "description": "A quiet alternative to the busy trails. You stay in community lodges and get great views of the Dhaulagiri range.",
-    "gallery": []
+    "gallery": [
+      {
+        "title": "Khopra Ridge View",
+        "img": "asset/KhopraRidge.jpg",
+        "note": "A peaceful ridge with stunning views."
+      }
+    ]
   }
 ]
