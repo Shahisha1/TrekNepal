@@ -4,6 +4,9 @@ This is a web project I built for my coursework at the Faculty of Management Stu
 This was made following the guidelines provided by PU for Project I.
 ## HomePage Preview 
 
+<img width="1918" height="912" alt="updated-homepage-with-image-carosoul" src="https://github.com/user-attachments/assets/36ce3a45-468a-45fd-8b2e-de35e53c3c0d" />
+
+
 
 
 ## What it does
