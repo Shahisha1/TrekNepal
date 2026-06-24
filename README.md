@@ -11,7 +11,7 @@ This was made following the guidelines provided by PU for Project I.
 *   **Route List:** Browse through a bunch of treks like Everest Base Camp or Annapurna Circuit. You can filter them by difficulty (Easy to Extreme) or just search by name.
 *   **Comparison Tool:** If you can't decide between routes, you can pick up to three and see their altitude, duration, and best seasons side-by-side.
 *   **Gallery:** A collection of photos from the different trekking regions.
-*   **Profile Page:** A simple dashboard I added where you can see "saved" routes, recent enquiries, and update your basic info. It uses `localStorage`, so your changes stay there even if you refresh.
+*   **Profile Page:** A simple dashboard I added where you can see "saved" routes, recent enquiries, and update your basic info, so your changes stay there even if you refresh.
 *   **Enquiry Forms:** Integrated forms on the contact and login pages with basic validation.
 
 ## How it's built
