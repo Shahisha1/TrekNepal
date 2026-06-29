@@ -237,6 +237,7 @@ button:disabled {
 .container {
     max-width: 1180px;
     margin: 0 auto;
+    padding: 0 24px;
 }
 
 .grid-view {
@@ -1002,6 +1003,10 @@ footer {
     margin-bottom: 32px;
 }
 
+.profile-header .container {
+    padding: 0 24px;
+}
+
 .profile-info {
     display: flex;
     align-items: center;
@@ -1037,6 +1042,11 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-bottom: 48px;
+}
+
+.stat-box .stat-val {
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .stat-box {
@@ -1117,6 +1127,10 @@ footer {
         grid-template-columns: 1fr;
         gap: 32px;
         padding: 48px 24px;
+    }
+
+    .about-image {
+        height: 260px;
     }
 }
 
@@ -1215,6 +1229,24 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-box {
+        padding: 16px 10px;
+    }
+
+    .stat-box .stat-val {
+        font-size: 1.1rem;
+    }
+
+    .stat-box .stat-lbl {
+        font-size: 0.7rem;
+        letter-spacing: 0.03em;
+    }
+
     .stats-bar {
         flex-direction: column;
     }
@@ -1243,5 +1275,28 @@ footer {
 
     .intro-words p {
         display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .stat-box {
+        padding: 20px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .stat-box .stat-val {
+        font-size: 1.4rem;
+    }
+
+    .stat-box .stat-lbl {
+        font-size: 0.8rem;
+        margin-top: 0;
+        text-align: right;
     }
 }
