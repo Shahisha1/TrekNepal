@@ -1301,6 +1301,34 @@ footer {
     }
 }
 
+/* FAQ Page Css */
+
+.faq-title {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.faq-title h1 {
+    font-family: "Lora", serif;
+    font-size: 2.2rem;
+    color: #1c1a17;
+    margin-bottom: 6px;
+}
+
+.faq-sub{
+    text-align: center;
+    color: #7a7469;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+
+}
+
+.faq-sub p {
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
 .faq-page {
     padding: 64px 24px 32px;
     background: #f3f0ea;
@@ -1317,18 +1345,16 @@ footer {
     gap: 12px;
 }
 
-.faq-title {
-    font-family: "Lora", serif;
-    font-size: 1.5rem;
-    color: #1c1a17;
-    margin-bottom: 16px;
+
+.faq-item {
+    border-bottom: 1px solid #ddd8cc;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-top: 0.5px solid #ddd8cc;
+    
+
 }
 
-.faq-sub{
-    color: #7a7469;
-    font-size: 0.9rem;
-    margin-bottom: 24px;
-}
 
 .faq-question {
     font-size: 1.05rem;
