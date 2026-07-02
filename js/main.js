@@ -49,7 +49,7 @@ const buildCard = (route) => `
                 <span>${route.duration}</span><span>${route.maxAltitude}</span><span>${route.bestSeason}</span>
             </div>
             <p class="trek-desc">${route.description.substring(0, 115)}...</p>
-            <a href="contact.html" class="trek-btn">Enquire About This Route</a>
+            <a href="contact.html" class="trek-btn">Learn More</a>
         </div>
     </div>`;
 
