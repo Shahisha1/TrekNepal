@@ -1300,3 +1300,44 @@ footer {
         text-align: right;
     }
 }
+
+.faq-page {
+    padding: 64px 24px 32px;
+    background: #f3f0ea;
+}
+
+.faq-box{
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-title {
+    font-family: "Lora", serif;
+    font-size: 1.5rem;
+    color: #1c1a17;
+    margin-bottom: 16px;
+}
+
+.faq-sub{
+    color: #7a7469;
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.faq-question {
+    font-size: 1.05rem;
+    color: #2d5a3d;
+    font-weight: 600;
+}
+
+.faq-answer {
+    font-size: 0.9rem;
+    color: #5a5650;
+    line-height: 1.6;
+}
