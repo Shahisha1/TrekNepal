@@ -143,7 +143,6 @@ const buildGalleryCard = (item) => `
         <div class="photo-info">
             <span class="tag tag-area">${item.region}</span>
             <h3 class="photo-name">${item.title}</h3>
-            ${item.note ? `<p class="photo-text">${item.note}</p>` : ""}
         </div>
     </article>`;
 
