@@ -670,6 +670,7 @@ button:disabled {
 
 .steps-grid {
     display: grid;
+
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 24px;
 }
@@ -677,6 +678,8 @@ button:disabled {
 .step-card {
     text-align: center;
     padding: 0 12px;
+    /* border: 1px solid #ddd8cc;
+    padding: 28px 20px; */
 }
 
 .step-num {
@@ -704,37 +707,6 @@ button:disabled {
     font-size: 0.85rem;
     color: #7a7469;
     line-height: 1.6;
-}
-
-/* ---- FAQ teaser banner (index page) ---- */
-.faq-banner {
-    max-width: 1180px;
-    margin: 0 auto 56px;
-    padding: 32px 40px;
-}
-
-.faq-banner-inner {
-    background: #e8f2ec;
-    border: 1px solid #b0d4be;
-    border-radius: 14px;
-    padding: 28px 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.faq-banner-inner h3 {
-    font-family: "Lora", serif;
-    font-size: 1.2rem;
-    color: #1c1a17;
-    margin-bottom: 4px;
-}
-
-.faq-banner-inner p {
-    color: #4d5a52;
-    font-size: 0.9rem;
 }
 
 /* ---- Contact page: info box + form side-by-side, map spread full-width below ---- */
