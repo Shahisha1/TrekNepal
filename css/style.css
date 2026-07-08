@@ -1607,13 +1607,7 @@ footer {
     color: #1c1a17;
 }
 
-.faq-question::-webkit-details-marker {
-    display: none;
-}
 
-.faq-question::marker {
-    content: "";
-}
 
 .faq-icon {
     flex-shrink: 0;
