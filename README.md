@@ -25,9 +25,19 @@ I kept things pretty simple and used:
 
 ## Project Structure
 
-*   `/asset`: Images for the routes and site UI.
-*   `/css`: The main stylesheet.
-*   `/data`: The JSON file where all the trek data is stored.
-*   `/js`: The main logic script.
-*   `/pages`: The rest of the pages of the project.
-*   The root folder contains all the HTML files (`index`,`compare`, `contact`,`README.md`, etc).
+```
+project-root/
+├── index.html          # homepage
+├── compare.html         # compare treks
+├── contact.html         # contact page
+├── ...                  # other root-level HTML pages
+├── README.md
+├── asset/               # images for routes and site UI
+├── css/                 # main stylesheet
+├── data/                # JSON file(s) with all the trek data
+├── js/                  # main logic script
+└── details/               # detail of some routes
+```
+## Why it exists
+
+Built as the Project I submission for Pokhara University's coursework, following PU's project guidelines — but the idea itself came from a real gap: planning a trek in Nepal usually means piecing together info from a dozen scattered blogs and forums just to compare two routes side by side. TrekNepal was an attempt to put that comparison (altitude, duration, best season, difficulty) in one place, plus a basic profile so a user's saved routes and enquiries stick around between visits.
