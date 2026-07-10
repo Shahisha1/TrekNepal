@@ -26,17 +26,17 @@ I kept things pretty simple and used:
 ## Project Structure
 
 ```
-project-root/
-├── index.html          # homepage
+TrekNepal/
+├── index.html           # homepage
 ├── compare.html         # compare treks
 ├── contact.html         # contact page
 ├── ...                  # other root-level HTML pages
 ├── README.md
 ├── asset/               # images for routes and site UI
 ├── css/                 # main stylesheet
-├── data/                # JSON file(s) with all the trek data
+├── data/                # JSON file with all the trek data
 ├── js/                  # main logic script
-└── details/               # detail of some routes
+└── details/             # detail of some routes
 ```
 ## Why it exists
 
