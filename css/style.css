@@ -515,13 +515,8 @@ button:disabled {
     height: 400px;
     object-fit: cover;
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.about-image:hover {
-    transform: scale(1.02);
-}
 
 .photo-grid {
     display: grid;
