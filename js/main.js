@@ -39,7 +39,18 @@ const buildBadge = (difficulty) => {
   return `<span class="tag ${map[difficulty] || "tag-medium"}">${difficulty}</span>`;
 };
 
-const buildCard = (route) => `
+const buildCard = (route) => {
+  let pageLink = "contact.html"; // default link
+  
+  if (route.name.includes("Everest Base Camp")) {
+    pageLink = "../details/EBC.html";
+  } else if (route.name.includes("Annapurna Circuit")) {
+    pageLink = "../details/ACT.html";
+  } else if (route.name.includes("Langtang Valley")) {
+    pageLink = "../details/LVT.html";
+  }
+  
+  return `
     <div class="trek-box" data-difficulty="${route.difficulty}" data-region="${route.region}">
         <div class="trek-img" style="background-image:url('${route.img || "asset/Logo.svg"}')"></div>
         <div class="trek-info">
@@ -49,9 +60,10 @@ const buildCard = (route) => `
                 <span>${route.duration}</span><span>${route.maxAltitude}</span><span>${route.bestSeason}</span>
             </div>
             <p class="trek-desc">${route.description.substring(0, 115)}...</p>
-            <a href="contact.html" class="trek-btn">Learn More</a>
+            <a href="${pageLink}" class="trek-btn">Learn More</a>
         </div>
     </div>`;
+};
 
 function initRoutesPage(routes) {
   const grid = document.getElementById("routes-list");
