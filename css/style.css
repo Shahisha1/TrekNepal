@@ -23,6 +23,14 @@ a:hover {
     color: #3d7a52;
 }
 
+.logo-img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    max-height: 50px;
+    height: auto;
+}
+
 button,
 .my-button,
 .btn {
@@ -273,17 +281,20 @@ button:disabled {
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    display: grid;
 }
 
 .image-slider .slide {
-    position: absolute;
-    inset: 0;
+    grid-area: 1 / 1;
     opacity: 0;
     transition: opacity 1s ease-in-out;
+    display: grid;
+    place-items: center;
 }
 
 .image-slider .slide.active {
     opacity: 1;
+    z-index: 1;
 }
 
 .image-slider .slide img {
@@ -520,14 +531,14 @@ button:disabled {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
 }
 
 .photo-item {
     position: relative;
-    aspect-ratio: 4 / 3;
-    border-radius: 12px;
+    aspect-ratio: 16 / 10;
+    border-radius: 16px;
     overflow: hidden;
     background: #e4ede7;
     border: 1px solid #ddd8cc;
@@ -550,10 +561,10 @@ button:disabled {
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 14px 16px;
+    padding: 16px 18px;
     background: linear-gradient(to top, rgba(10, 20, 15, 0.9) 20%, transparent 100%);
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -564,9 +575,30 @@ button:disabled {
 
 .photo-name {
     font-family: "Lora", serif;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     color: #fff;
     margin: 6px 0 0;
+}
+
+@media (max-width: 860px) {
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+    }
+
+    .photo-item {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-item {
+        aspect-ratio: 5 / 4;
+    }
 }
 
 /* ---- Testimonials (index page) ---- */
@@ -1628,4 +1660,57 @@ footer {
     color: #5a5650;
     line-height: 1.7;
     padding: 0 0 20px;
+}
+
+.route-hero{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.section-title {
+    font-family: "Lora", serif;
+    font-size: 1.6rem;
+    color: #1c1a17;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.section-part{
+    font-size: 0.9rem;
+    color: #5a5650;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.route-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.route-image {
+   position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: #7a7469;
+    margin-bottom: 12px;
 }
