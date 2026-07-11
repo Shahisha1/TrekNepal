@@ -43,11 +43,11 @@ const buildCard = (route) => {
   let pageLink = "contact.html"; // default link
   
   if (route.name.includes("Everest Base Camp")) {
-    pageLink = "/details/EBC.html";
+    pageLink = "details/EBC.html";
   } else if (route.name.includes("Annapurna Circuit")) {
-    pageLink = "/details/ACT.html";
+    pageLink = "details/ACT.html";
   } else if (route.name.includes("Langtang Valley")) {
-    pageLink = "/details/LVT.html";
+    pageLink = "details/LVT.html";
   }
   
   return `
