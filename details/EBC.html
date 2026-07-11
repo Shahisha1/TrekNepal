@@ -30,7 +30,7 @@
 
         .route-hero {
             position: relative;
-            background: linear-gradient(180deg, rgba(12, 23, 18, 0.32), rgba(12, 23, 18, 0.32)), url('../asset/Everest-Base-Camp-Trek-1.jpeg') center/cover no-repeat;
+            background:url('../asset/Everest-Base-Camp-Trek-1.jpeg') center/cover no-repeat;
             color: white;
             padding: 90px 20px 45px;
             min-height: 460px;
@@ -183,10 +183,6 @@
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="../FAQ.html">FAQ</a></li>
             <li><a href="../profile.html">Profile</a></li>
-            <li class="mobile-auth-buttons">
-                <a href="../login.html" class="my-button outline-btn small-btn">Sign In</a>
-                <a href="../signup.html" class="my-button main-btn small-btn">Sign Up</a>
-            </li>
         </ul>
         <div class="auth-buttons">
             <a href="../login.html" class="my-button outline-btn small-btn">Sign In</a>
@@ -195,16 +191,7 @@
         <button class="mobile-menu-btn">Menu</button>
     </nav>
 
-    <script>
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            var btn = document.querySelector('.mobile-menu-btn');
-            var header = document.querySelector('.header-nav');
-            btn && btn.addEventListener('click', function () {
-                header.classList.toggle('open');
-            });
-        });
-    </script>
+
 
     <section class="route-hero">
         <div class="container">
