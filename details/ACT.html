@@ -1,72 +1,289 @@
-<!--Annapurna Circuit Trek-->
-<!DOCTYPE html>
+<!--Annapurna Base Camp-->
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Routes - TrekNepal</title>
-        <link rel="icon" type="image/x-icon" href="../asset/Logo.png" />
-        <link rel="stylesheet" href="../css/style.css" />
-    </head>
-    <body>
-        <nav class="header-nav">
-            <div class="logo-text"> <a href="../index.html"> <img src="../asset/Logo.png" alt="TrekNepal Logo"
-                        height="50" /> TrekNepal</a></div>
-            <ul class="nav-items">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../routes.html" class="active">Routes</a></li>
-                <li><a href="../gallery.html">Gallery</a></li>
-                <li><a href="../compare.html">Compare</a></li>
-                <li><a href="../contact.html">Contact</a></li>
-                <li><a href="../FAQ.html">FAQ</a></li>
-                <li><a href="../profile.html">Profile</a></li>
-                <li class="mobile-auth-buttons">
-                    <a href="../login.html" class="my-button outline-btn small-btn">Sign In</a>
-                    <a href="../signup.html" class="my-button main-btn small-btn">Sign Up</a>
-                </li>
-            </ul>
-            <div class="auth-buttons">
-                <a href="../login.html" class="my-button outline-btn small-btn">Sign In</a>
-                <a href="../signup.html" class="my-button main-btn small-btn">Sign Up</a>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Annapurna Base Camp - TrekNepal</title>
+    <link rel="icon" type="image/x-icon" href="../asset/Logo.png" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/main.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f1;
+            color: #23302b;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .route-hero {
+            position: relative;
+            background:url('../asset/Annapurna-Base-Camp-Trek-1.jpeg') center/cover no-repeat;
+            color: white;
+            padding: 90px 20px 45px;
+            min-height: 460px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            text-align: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .route-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .route-hero p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .breadcrumb {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .breadcrumb a {
+            color: #c7f1df;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .section-part {
+            padding: 0px 0 0px;
+            background-color: white;
+        }
+
+        .section-intro {
+            margin-bottom: 40px;
+        }
+
+        .section-intro h1 {
+            color: #176a40;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-intro p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #5c6b60;
+            margin-bottom: 15px;
+        }
+
+        .section-intro ul {
+            margin-left: 20px;
+            color: #5c6b60;
+        }
+
+        .section-intro li {
+            margin-bottom: 10px;
+        }
+
+        .quick-info {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border: 1px solid #ccc;
+        }
+
+        .quick-info h2 {
+            color: #176a40;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .facts-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .facts-table td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .facts-table .label {
+            font-weight: bold;
+            background-color: #f0f0f0;
+            width: 40%;
+        }
+
+        .route-images {
+            column-count: 3;
+            column-gap: 12px;
+        }
+
+        .route-images img {
+            width: 100%;
+            display: block;
+            margin-bottom: 12px;
+            border-radius: 4px;
+        }
+
+        /* responsive */
+        @media (max-width: 992px) {
+            .route-images {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .route-hero {
+                padding: 60px 15px;
+            }
+
+            .route-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-intro h1 {
+                font-size: 1.5rem;
+            }
+
+            .route-images {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="header-nav">
+        <div class="logo-text">
+            <a href="../index.html">
+                <img src="../asset/Logo.png" class="logo-img" alt="TrekNepal Logo" height="50" />
+                TrekNepal
+            </a>
+        </div>
+        <ul class="nav-items">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../routes.html" class="active">Routes</a></li>
+            <li><a href="../gallery.html">Gallery</a></li>
+            <li><a href="../compare.html">Compare</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+            <li><a href="../FAQ.html">FAQ</a></li>
+            <li><a href="../profile.html">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="../login.html" class="my-button outline-btn small-btn">Sign In</a>
+            <a href="../signup.html" class="my-button main-btn small-btn">Sign Up</a>
+        </div>
+        <button class="mobile-menu-btn">Menu</button>
+    </nav>
+
+
+
+    <section class="route-hero">
+        <div class="container">
+            <h1>Annapurna Base Camp Trek</h1>
+            <p>Explore the heart of the Annapurna range and walk into the stunning natural amphitheater of the Annapurna Sanctuary.</p>
+            <p class="breadcrumb">
+                <a href="../index.html">Home</a> > <a href="../routes.html">Routes</a> > Annapurna Base Camp Trek
+            </p>
+        </div>
+    </section>
+
+    <div class="section-part">
+        <div class="container">
+            
+            <div class="section-intro">
+                <h1>The Trek</h1>
+                <p>The Annapurna trek begins with a ride from Pokhara to the trailhead at Nayapul. From there, the path goes up slowly through rice terraces, forests, and small mountain villages. The walk is gentle enough for beginners and gives you lots of nice mountain views.</p>
+                <p>You will pass through villages like Ghorepani and Chhomrong. Along the way, you can see mountains such as Annapurna and Machapuchare. The final part leads into the Annapurna Sanctuary, a high valley surrounded by tall snow peaks.</p>
+                <p>The trip usually takes 10-12 days. You reach Annapurna Base Camp at 4,130m. The trek mixes simple village life, fresh mountain air, and easy daily walks that many first-time trekkers enjoy.</p>
             </div>
-            <button class="mobile-menu-btn">Menu</button>
-        </nav>
-        <div class="route-hero"><!--with breadcrumb-->
-            <div class="container">
-                <h1>Annapurna Circuit Trek</h1>
-                <p>
-                    Experience the diverse landscapes of Nepal on the Annapurna Circuit Trek, one of the most popular and rewarding treks in the country.
-                </p>
-                <div class="breadcrumb">
-                    <a href="../index.html">Home</a> &gt; <a href="../routes.html">Routes</a> &gt; Annapurna Circuit Trek
+
+            <div class="quick-info">
+                <h2>Quick Facts</h2>
+                <table class="facts-table">
+                    <tr>
+                        <td class="label">Duration</td>
+                        <td>10-12 Days</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Difficulty</td>
+                        <td>Moderate</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Best Time</td>
+                        <td>March-May, September-November</td>
+                    </tr>
+                    <tr>
+                        <td class="label">Highest Point</td>
+                        <td>4,130m</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="section-intro">
+                <h1>Highlights</h1>
+                <p>The trek gives you wide views of mountains like Annapurna I, Annapurna South, Hiunchuli, and Machapuchare. One of the best spots is Poon Hill, where you can watch the sunrise over the mountains.</p>
+                <p>You also walk through friendly Gurung and Magar villages, cross stone bridges, and see small waterfalls. Near the end, the trail goes into a dramatic high-altitude valley with glaciers and large peaks all around.</p>
+            </div>
+            <div class="section-intro">
+                <h1>What to Expect</h1>
+                <p>Each day you walk about 4-6 hours. You stay in teahouses, which are simple lodges with beds and basic food. The weather changes as you go higher, so bring warm clothes and rain gear.</p>
+                <ul>
+                    <li><b>Mountain views:</b> Annapurna I, Annapurna South, Hiunchuli, and Machapuchare.</li>
+                    <li><b>Local culture:</b> Gurung and Magar villages, teahouses, and warm Himalayan hospitality.</li>
+                    <li><b>Altitude:</b> The trail rises slowly with rest days for getting used to the height in places like Ghorepani and Chhomrong.</li>
+                    <li><b>Terrain:</b> You walk on dirt paths, stone steps, forest trails, and gentle alpine slopes.</li>
+                </ul>
+            </div>
+            <div class="section-intro">
+                <h1>Gallery</h1>
+                <p>A glimpse of the landscapes and cultural experiences you will encounter on the Annapurna Base Camp trek.</p>
+                <div class="route-images">
+                    <img src="../asset/Annapurna-Base-Camp-Trek-1.jpeg" alt="Annapurna Base Camp" />
+                    <img src="../asset/Annapurna-Ghorepani-Sunrise.jpg" alt="Ghorepani Sunrise" />
+                    <img src="../asset/Annapurna-Machapuchare-View.jpg" alt="Machapuchare View" />
+                    <img src="../asset/Annapurna-Forest-Trail.jpg" alt="Forest Trail" />
+                    <img src="../asset/Annapurna-Tadapani.jpg" alt="Tadapani Village" />
+                    <img src="../asset/Annapurna-Prayer-Flags.jpg" alt="Prayer Flags" />
+                    <img src="../asset/Annapurna-Teahouse.jpg" alt="Teahouse" />
+                    <img src="../asset/Annapurna-Bridge.jpg" alt="Suspension Bridge" />
+                    <img src="../asset/Annapurna-View.jpg" alt="Annapurna View" />
+                    <img src="../asset/Annapurna-Path.jpg" alt="Trekking Path" />
+                    <img src="../asset/Annapurna-Local-Culture.png" alt="Local Culture" />
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">TrekNepal</div>
+                    <p class="footer-desc">
+                        A student project from Pokhara University, Faculty of
+                        Management Studies.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 TrekNepal . Pokhara University
+            </div>
+        </footer>
+    </div>
+</body>
 
-        <div class="section-part">
-            <div class="container">
-                <h1>Annapurna Circuit Trek</h1>
-                <p>
-                    The Annapurna Circuit Trek is a classic adventure that takes you through the stunning landscapes of the Annapurna region. This trek offers breathtaking views of the Himalayas, including iconic peaks like Annapurna I and II. Along the way, you'll experience the unique Gurung and Magar cultures, visit ancient monasteries, and witness the diverse ecosystems of the region.
-                </p>
-                <div class="route-details">
-                    <h2>Route Details</h2>
-                    <ul>
-                        <li><strong>Duration:</strong> 14-21 days</li>
-                        <li><strong>Difficulty:</strong> Moderate to Hard</li>
-                        <li><strong>Best Season:</strong> March to May and September to November</li>
-                        <li><strong>Starting Point:</strong> Besisahar</li>
-                        <li><strong>Ending Point:</strong> Nayapul</li>
-                    </ul>
-                </div>
-                <div><!--beautiful places near annapurna circuit images -->
-                    <h2>Beautiful Places Near Annapurna Circuit</h2>
-                    <div class="image-gallery">
-                        <img src="../asset/AnnapurnaBaseCamp.jpg" alt="Annapurna Base Camp" />
-                        <img src="../asset/TilichoLake.jpg" alt="Tilicho Lake" />
-                        <img src="../asset/ManangVillage.jpg" alt="Manang Village" />
-                        <img src="../asset/MuktinathTemple.jpg" alt="Muktinath Temple" />
-                    </div>
-                    
-                </div>
-            </div>  
+</html>
