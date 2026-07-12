@@ -101,7 +101,7 @@ button:disabled {
 }
 
 /* Sign In / Sign Up buttons shown inside the mobile dropdown menu.
-   Hidden by default (desktop) - only revealed on small screens, see media query below. */
+   Hidden by default (desktop) */
 .mobile-auth-buttons {
     display: none;
 }
