@@ -100,7 +100,7 @@ function initRoutesPage(routes) {
     });
   showRoutes();
 }
-
+//CONTACT PAGE
 function initContactForm() {
   const form = document.getElementById("contact-block");
   if (!form) return;
@@ -148,7 +148,7 @@ function initContactForm() {
     }
   });
 }
-
+//GALLERY PAGE
 const buildGalleryCard = (item) => `
     <article class="photo-item" data-region="${item.region}">
         <div class="photo-img" style="background-image:url('${item.img || "asset/Logo.svg"}')"></div>
@@ -196,6 +196,8 @@ function initGalleryPage(items) {
   render();
 }
 
+
+//compare button state
 function initCompareButtonState() {
   const btn = document.getElementById("compare-action");
   if (!btn) return;
@@ -210,7 +212,7 @@ function initCompareButtonState() {
   selects.forEach((s) => s.addEventListener("change", update));
   update();
 }
-
+//back to top button
 function initBackToTop() {
   const btn = document.getElementById("back-to-top");
   if (!btn) return;
@@ -298,4 +300,5 @@ function initProfilePage() {
 }
 document.addEventListener("DOMContentLoaded", () => {
   initCompareButtonState();
+  initBackToTopButton();
 });
