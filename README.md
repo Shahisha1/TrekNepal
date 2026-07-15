@@ -6,8 +6,7 @@ This was made following the guidelines provided by PU for Project I.
 
 <img width="1918" height="912" alt="updated-homepage-with-image-carosoul" src="https://github.com/user-attachments/assets/36ce3a45-468a-45fd-8b2e-de35e53c3c0d" />
 
-
-nfuhewufyhewuodh
+## What it does
 
 *   **Route List:** Browse through a bunch of treks like Everest Base Camp or Annapurna Circuit. You can filter them by difficulty (Easy to Extreme) or just search by name.
 *   **Comparison Tool:** If you can't decide between routes, you can pick up to three and see their altitude, duration, and best seasons side-by-side.
