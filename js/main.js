@@ -1,20 +1,21 @@
-﻿const navToggle = document.querySelector(".mobile-menu-btn");
+﻿//NAVIGATION
+const navToggle = document.querySelector(".mobile-menu-btn");
 const navLinks = document.querySelector(".nav-items");
-
+// Mobile menu toggle
 if (navToggle) {
   navToggle.addEventListener("click", () => navLinks.classList.toggle("open"));
 }
-
+// Highlight active nav link
 document.querySelectorAll(".nav-items a").forEach((link) => {
   if (link.href === window.location.href) link.classList.add("active");
 });
-
+//FETCH ROUTES DATA
 const getRoutes = (cb) => {
   fetch("data/routes.json")
     .then((res) => res.json())
     .then(cb);
 };
-
+//GALLERY PAGE
 const getGallery = (cb) => {
   getRoutes((routes) => {
     const items = [];
@@ -28,7 +29,7 @@ const getGallery = (cb) => {
     cb(items);
   });
 };
-
+//ROUTES PAGE
 const buildBadge = (difficulty) => {
   const map = {
     Easy: "tag-easy",
@@ -38,7 +39,7 @@ const buildBadge = (difficulty) => {
   };
   return `<span class="tag ${map[difficulty] || "tag-medium"}">${difficulty}</span>`;
 };
-
+//ROUTES PAGE
 const buildCard = (route) => {
   let pageLink = "contact.html"; // default link
   
@@ -64,7 +65,7 @@ const buildCard = (route) => {
         </div>
     </div>`;
 };
-
+//ROUTES PAGE
 function initRoutesPage(routes) {
   const grid = document.getElementById("routes-list");
   const searchInput = document.getElementById("route-search");
@@ -298,6 +299,7 @@ function initProfilePage() {
 
   render();
 }
+// Initialize everything on DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
   initCompareButtonState();
   initBackToTopButton();
