@@ -3,7 +3,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)
-![Last Commit](https://img.shields.io/github/last-commit/Shahisha1/TrekNepal)
+![LastCommit](https://badgen.net/github/last-commit/shahisha1/TrekNepal)
 
 This is a web project I built for my coursework at the Faculty of Management Studies, Pokhara University. It's a simple platform to help people check out different trekking routes in Nepal, compare them, and get a feel for what each trail offers.
 
